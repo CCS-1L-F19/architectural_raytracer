@@ -4,7 +4,7 @@
 #include "hitable.h"
 #include "camera.h"
 #include "sphere.h"
-
+#include <cstdlib>
 
 float ran(){
 	return 0.999f*float(rand())/RAND_MAX;

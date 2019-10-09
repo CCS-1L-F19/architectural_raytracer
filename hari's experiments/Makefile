@@ -1,13 +1,14 @@
-main: main.o ray.o camera.o hitable.o sphere.o
-	g++ main.cpp -o main
-main.o: main.cpp
+main.o: main.cpp sphere.h ray.h camera.h hitable.h
 	g++ -c main.cpp
-camera.o: camera.h
-	g++ -c camera.h
-ray.o: ray.h
-	g++ -c ray.h
-hitable.o: hitable.h
-	g++ -c hitable.h
-sphere.o: sphere.h
-	g++ -c sphere.h
+camera.o: camera.cpp
+	g++ -c camera.cpp
+sphere.o: sphere.cpp
+	g++ -c sphere.cpp
+main: main.o camera.o sphere.o
+	g++ main.o camera.o sphere.o -o main
+
+clean:
+	rm -f *.o
+	rm -f *.gch
+
 
