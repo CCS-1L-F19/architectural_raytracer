@@ -12,7 +12,7 @@ class ray{
 	vec3 b;
 	
 	ray(){}
-	ray(const vec3 & A,const vec3 & B){a = A;b = B;}
+	ray(const vec3 & A,const vec3 & B){a = A;b = normalize(B);}
 
 	vec3 origin(){return a;}
 	vec3 dir(){return b;}

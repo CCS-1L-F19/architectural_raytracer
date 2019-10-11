@@ -5,6 +5,7 @@
 #include "camera.h"
 #include "sphere.h"
 #include <cstdlib>
+#include "hitable_list.h"
 
 float ran(){
 	return 0.999f*float(rand())/RAND_MAX;
@@ -21,15 +22,13 @@ vec3 random_in_sphere(){
 	return v;
 }
 
-vec3 blend(ray &r,hitable* world[],int size){
+vec3 blend(ray &r,hitable_list* world){
 	bool hit;
 	hit_record rec;
-	for(int i =0;i<size;i++){
-       		hit = world[i]->hit(r,0.01,MAXFLOAT,rec);
-		if(hit){
-			ray new_ray = ray(rec.p,rec.normal+random_in_sphere());
-			return (0.5f * blend(new_ray,world,2));
-		}
+	hit = world->hit(r,0.0001,MAXFLOAT,rec);
+	if(hit){
+		ray new_ray = ray(rec.p,rec.normal + random_in_sphere());
+		return 0.5f * blend(new_ray,world);
 	}
 
 	//x range: -2 to 2
@@ -42,14 +41,15 @@ vec3 blend(ray &r,hitable* world[],int size){
 
 int main(int argc, char * argv[]){
 	srand(time(NULL));
-	int width = 800;
-	int height = 400;
+	int width = 1000;
+	int height = 500;
 	int rays_per_pixel = std::atoi(argv[1]);
 	int size = 3;
-	hitable* world[size];
-	world[0] = new sphere(vec3(0,0,-1),0.5f);
-	world[1] = new sphere(vec3(1,0,-1),0.5f);
-	world[size - 1] = new sphere(vec3(0,-100.5,-1),100);
+	hitable* worl[size];
+	worl[0] = new sphere(vec3(0,0,-1),0.5f);
+	worl[1] = new sphere(vec3(1,0,-1),0.5f);
+	worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f);
+	hitable_list world = hitable_list(worl,size);
 	vec3 origin = vec3(std::atof(argv[2]),std::atof(argv[3]),std::atof(argv[4]));
 	vec3 lookat =  vec3(0,0,-1);
 	vec3 vertical =  vec3(0,2.0,0);
@@ -65,7 +65,7 @@ int main(int argc, char * argv[]){
 				u = float(j+ran())/float(width);
 				v = float(i+ran())/float(height);
 				ray r = cam.get_ray(u,v);
-				col = col + blend(r,world,size);
+				col = col + blend(r,&world);
 			}
 			col /= rays_per_pixel;
 			col.x = sqrt(col.x);

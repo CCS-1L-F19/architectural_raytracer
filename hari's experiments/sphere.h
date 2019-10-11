@@ -4,12 +4,14 @@
 #include "hitable.h"
 #include <math.h>
 #include "glm/glm.hpp"
+#include "material.h"
 
 class sphere : public hitable {
 	public:
 	vec3 center;
 	float radius;
-	
+	material* matptr;
+
 	sphere(){};
 	sphere(vec3 cen,float r);
 	

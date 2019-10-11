@@ -21,6 +21,7 @@ bool sphere::hit(ray & r,float t_min,float t_max,hit_record & rec) const {
 				rec.t = time;
 				rec.p = r.point_at_t(time);
 				rec.normal = normalize(rec.p - center);
+				rec.mat_ptr = matptr;
 				return true;
 			}
 		}

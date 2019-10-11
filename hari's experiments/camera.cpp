@@ -14,7 +14,7 @@ camera::camera(vec3 lookfrom,vec3 lookat,float fovvert,float aspect_ratio){
 		half_width = half_height * aspect;
 		height = v*half_height*2.0f;
 		width = u*half_width*2.0f;
-		lower_left = lookat - half_height*v - half_width*u;
+		lower_left = origin - half_height*v - half_width*u -w;
 }
 ray camera::get_ray(float s,float d){return ray(origin,lower_left + s*width + d*height - origin);}
 
