@@ -22,13 +22,19 @@ vec3 random_in_sphere(){
 	return v;
 }
 
-vec3 blend(ray &r,hitable_list* world){
+vec3 blend(ray &r,hitable_list* world,int bounces){
 	bool hit;
 	hit_record rec;
+	rec.mat_ptr = NULL;
 	hit = world->hit(r,0.0001,MAXFLOAT,rec);
 	if(hit){
-		ray new_ray = ray(rec.p,rec.normal + random_in_sphere());
-		return 0.5f * blend(new_ray,world);
+		ray scattered;
+		vec3 attenuation;
+		if(bounces < 50 && rec.mat_ptr->scatter(r,rec,attenuation,scattered)){
+			return attenuation * blend(scattered,world,bounces + 1);
+		} else {
+			return vec3(0,0,0);
+		}
 	}
 
 	//x range: -2 to 2
@@ -37,18 +43,18 @@ vec3 blend(ray &r,hitable_list* world){
 	vec3 blue =vec3(0.52,0.808,0.92);
 	float t = 0.5f*(normalize(r.dir()).y + 1);
 	return t*(blue - white) + white;
-};
+}
 
 int main(int argc, char * argv[]){
 	srand(time(NULL));
-	int width = 1000;
-	int height = 500;
+	int width = 800;
+	int height = 400;
 	int rays_per_pixel = std::atoi(argv[1]);
 	int size = 3;
 	hitable* worl[size];
-	worl[0] = new sphere(vec3(0,0,-1),0.5f);
-	worl[1] = new sphere(vec3(1,0,-1),0.5f);
-	worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f);
+	worl[0] = new sphere(vec3(0,0,-1),0.5f,new diffuse(vec3(0.8,0.2,0.2)));
+	worl[1] = new sphere(vec3(1,0,-1),0.5f,new metal(vec3(0.8,0.8,0.8)));
+	worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f,new diffuse(vec3(0.8,0.8,0)));
 	hitable_list world = hitable_list(worl,size);
 	vec3 origin = vec3(std::atof(argv[2]),std::atof(argv[3]),std::atof(argv[4]));
 	vec3 lookat =  vec3(0,0,-1);
@@ -65,7 +71,7 @@ int main(int argc, char * argv[]){
 				u = float(j+ran())/float(width);
 				v = float(i+ran())/float(height);
 				ray r = cam.get_ray(u,v);
-				col = col + blend(r,&world);
+				col = col + blend(r,&world,1);
 			}
 			col /= rays_per_pixel;
 			col.x = sqrt(col.x);

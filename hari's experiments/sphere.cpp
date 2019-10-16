@@ -1,4 +1,5 @@
 #include "sphere.h"
+#include "material.h"
 
 bool sphere::hit(ray & r,float t_min,float t_max,hit_record & rec) const {
 		vec3 A = r.origin();
@@ -14,6 +15,7 @@ bool sphere::hit(ray & r,float t_min,float t_max,hit_record & rec) const {
 				rec.t = time;
 				rec.p = r.point_at_t(time);
 				rec.normal = normalize(rec.p - center);
+				rec.mat_ptr = matptr;
 				return true;
 			}
 			time = (-b + discriminant)/(2*a);
@@ -29,4 +31,4 @@ bool sphere::hit(ray & r,float t_min,float t_max,hit_record & rec) const {
 }
 
 
-sphere::sphere(vec3 cen,float r){radius = r;center = cen;}
+sphere::sphere(vec3 cen,float r,material* m){radius = r;center = cen; matptr = m;}

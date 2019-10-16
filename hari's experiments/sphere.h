@@ -13,7 +13,7 @@ class sphere : public hitable {
 	material* matptr;
 
 	sphere(){};
-	sphere(vec3 cen,float r);
+	sphere(vec3 cen,float r,material* m);
 	
 	bool hit(ray & r,float t_min,float t_max,hit_record & rec) const;
 			
