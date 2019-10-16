@@ -16,7 +16,7 @@ vec3 reflect(const vec3& v,const vec3& n){
 
 bool metal::scatter( ray& r_in, hit_record& rec, vec3& attenuation,ray& scattered) const {
 	vec3 reflected = reflect(r_in.dir(),rec.normal);
-	scattered = ray(rec.p,reflected);
+	scattered = ray(rec.p,reflected + fuzz * random_in_sphere());
 	attenuation = albedo;
 	return true;
 }

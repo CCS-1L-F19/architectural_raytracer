@@ -21,7 +21,8 @@ class diffuse : public material{
 class metal : public material{
 	public:
 		vec3 albedo;
-		metal(vec3 a){albedo = a;}
+		float fuzz;
+		metal(vec3 a,float f){albedo = a;fuzz = f;}
 		virtual bool scatter( ray& r_in, hit_record& rec, vec3& attenuation,ray& scattered) const;
 };
 
