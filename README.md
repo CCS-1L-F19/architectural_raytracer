@@ -9,8 +9,8 @@ make main
 ```
 [1]: Rays per Pixel
 
-([2],[3],[4]): Coordinates of camera
+( [2] , [3] , [4] ): Coordinates of camera
 
 [filename]: Name of image file
 
-Open in GIMP or (online ppm viewer)[http://paulcuth.me.uk/netpbm-viewer/]
+Open in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-viewer/)
