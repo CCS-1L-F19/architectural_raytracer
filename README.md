@@ -2,10 +2,10 @@
 Raytracer for rendering architechtural designs in C++ (probably).
 
 ```
-git clone ...
-cd hari\'s\ experiments/
-make main
-./main [1] [2] [3] [4] > [filename].ppm
+$ git clone git@github.com:CCS-1L-F19/architectural_raytracer.git
+$ cd hari\'s\ experiments/
+$ make main
+$ ./main [1] [2] [3] [4] > [filename].ppm
 ```
 [1]: Rays per Pixel
 
