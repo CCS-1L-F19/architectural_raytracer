@@ -13,4 +13,4 @@ $ ./main [1] [2] [3] [4] > [filename].ppm
 
 [filename]: Name of image file
 
-Open in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-viewer/)
+Open image file in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-viewer/)
