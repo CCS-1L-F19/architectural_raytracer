@@ -20,4 +20,4 @@ Open image file in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-view
 
 It should look something like 
 
-![alt text](https://imgur.com/a/0gUIdTs)
+![](https://i.imgur.com/7JLyUGV.png)
