@@ -26,7 +26,7 @@ vec3 blend(ray &r,hitable_list* world,int bounces){
 	bool hit;
 	hit_record rec;
 	rec.mat_ptr = NULL;
-	hit = world->hit(r,0.0001,MAXFLOAT,rec);
+	hit = world->hit(r,0.0001,2.4e+30,rec);
 	if(hit){
 		ray scattered;
 		vec3 attenuation;
