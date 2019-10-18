@@ -18,4 +18,4 @@ Good values for a demo are (1,2,3,4) = (20,0,0,0.5)
 
 Open image file in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-viewer/)
 
-It should look something like [this](https://imgur.com/a/0gUIdTs)
+It should look something like ![alt text](https://imgur.com/a/0gUIdTs)
