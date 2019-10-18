@@ -11,6 +11,10 @@ $ ./main [1] [2] [3] [4] > [filename].ppm
 
 ( [2] , [3] , [4] ): Coordinates of camera
 
+Good values for a demo are (1,2,3,4) = (20,0,0,0.5)
+
 [filename]: Name of image file
 
 Open image file in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-viewer/)
+
+It should look something like [this](https://imgur.com/a/0gUIdTs)
