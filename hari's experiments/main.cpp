@@ -52,8 +52,8 @@ int main(int argc, char * argv[]){
 	int rays_per_pixel = std::atoi(argv[1]);
 	int size = 3;
 	hitable* worl[size];
-	worl[0] = new sphere(vec3(0,0,-1),0.5f,new diffuse(vec3(0.8,0.2,0.2)));
-	worl[1] = new sphere(vec3(1,0,-1),0.5f,new metal(vec3(0.8,0.8,0.8),0.1f));
+	worl[0] = new sphere(vec3(-0.5,0,-1),0.5f,new diffuse(vec3(0.8,0.2,0.2)));
+	worl[1] = new sphere(vec3(0.5,0,-1),0.5f,new metal(vec3(0.8,0.8,0.8),0.1f));
 	worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f,new diffuse(vec3(0.8,0.8,0)));
 	hitable_list world = hitable_list(worl,size);
 	vec3 origin = vec3(std::atof(argv[2]),std::atof(argv[3]),std::atof(argv[4]));
