@@ -6,6 +6,7 @@
 #include "glm/glm.hpp"
 #include "material.h"
 
+
 class sphere : public hitable {
 	public:
 	vec3 center;

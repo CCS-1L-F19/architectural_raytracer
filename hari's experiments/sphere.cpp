@@ -1,6 +1,7 @@
 #include "sphere.h"
 #include "material.h"
 
+
 bool sphere::hit(ray & r,float t_min,float t_max,hit_record & rec) const {
 		vec3 A = r.origin();
 		vec3 B = r.dir();
