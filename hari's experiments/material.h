@@ -26,4 +26,11 @@ class metal : public material{
 		virtual bool scatter( ray& r_in, hit_record& rec, vec3& attenuation,ray& scattered) const;
 };
 
+class dielectric : public material {
+    public:
+    	float ref_idx;
+        dielectric(float ri) : ref_idx(ri) {}
+        virtual bool scatter(ray& r_in, hit_record& rec, vec3& attenuation, ray& scattered) const;
+};
+
 #endif
