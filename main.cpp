@@ -82,17 +82,16 @@ std::vector<hitable*> random_scene() {
     return v;
 }
 
-vec3 blend(ray &r,int bounces,BVH& space){
+vec3 blend(ray &r,int bounces,hitable_list& world){
 	bool hit;
 	hit_record rec;
 	rec.mat_ptr = NULL;
-	hitable_list obj = hitable_list(space.hit(r,0.0001,2.4e+30));
-	hit = obj.hit(r,0.0001,2.4e+30,rec);
+	hit = world.hit(r,0.0001,2.4e+30,rec);
 	if(hit){
 		ray scattered;
 		vec3 attenuation;
 		if(bounces < 50 && rec.mat_ptr->scatter(r,rec,attenuation,scattered)){
-			return attenuation * blend(scattered,bounces + 1,space);
+			return attenuation * blend(scattered,bounces + 1,world);
 		} else {
 			return vec3(0,0,0);
 		}
@@ -125,8 +124,9 @@ int main(int argc, char * argv[]){
 
 	std::vector<hitable*> wor = random_scene();
 
-	BVH hierarchy = BVH(wor,wor.size(),vec3(-11,-0.5,-11),vec3(11,3.5,11));
-	std::cout << "Tree made" << std::endl;
+	//BVH hierarchy = BVH(wor,wor.size(),vec3(-11,-0.5,-11),vec3(11,3.5,11));
+	//std::cout << "Tree made" << std::endl;
+	hitable_list world = hitable_list(wor);
 
 	/*
 	Node* n = hierarchy.root->left->left->right;
@@ -155,7 +155,7 @@ int main(int argc, char * argv[]){
 				v = float(i+ran())/float(height);
 				ray r = cam.get_ray(u,v);
 //std::cout << "Hello" <<std::endl;
-				col = col + blend(r,1,hierarchy);
+				col = col + blend(r,1,world);
 //std::cout << "bye";
 			}
 			col /= rays_per_pixel;
