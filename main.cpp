@@ -42,12 +42,13 @@ vec3 random_in_sphere(){
 
 std::vector<hitable*> random_scene() {
     int n = 500;
-    hitable **list = new hitable*[n+1];
+    hitable **list = new hitable*[n];
     int i = 0;
     for (int a = -11; a < 11; a++) {
         for (int b = -11; b < 11; b++) {
             float choose_mat = drand48();
             vec3 center(a+0.9*drand48(),0.2,b+0.9*drand48());
+            //vec3 center(a,0.2,b);
             if ((center-vec3(4,0.2,0)).length() > 0.9) {
                 if (choose_mat < 0.8) {  // diffuse
                     list[i++] = new sphere(
@@ -73,25 +74,40 @@ std::vector<hitable*> random_scene() {
         }
     }
 
-    list[i++] = new sphere(vec3(0, 1, 0), 1.0, new dielectric(1.5));
-    list[i++] = new sphere(vec3(-4, 1, 0), 1.0, new diffuse(vec3(0.4, 0.2, 0.1)));
-    list[i++] = new sphere(vec3(4, 1, 0), 1.0, new metal(vec3(0.7, 0.6, 0.5), 0.0));
+    list[i++] = new sphere(vec3(0, 1, 0), -1.0, new dielectric(1.5));
+    list[i++] = new sphere(vec3(-4, 1, 0), 1.0, new diffuse(vec3(1, 1, 0)));
+    list[i++] = new sphere(vec3(4, 1, 0), 1.0, new metal(vec3(0.4, 0.4, 0.8), 0.0));
     list[i++] =  new sphere(vec3(0,-1000,0), 1000, new diffuse(vec3(0.5, 0.5, 0.5)));
 
     std::vector<hitable*> v(list,list+i);
     return v;
 }
 
-vec3 blend(ray &r,int bounces,hitable_list& world){
+int boundedRays = 0;
+
+vec3 blend(ray &r,int bounces,BVH& world,hitable_list& smol){
 	bool hit;
 	hit_record rec;
 	rec.mat_ptr = NULL;
-	hit = world.hit(r,0.0001,2.4e+30,rec);
+
+	hitable_list obj;
+
+	if(bounces == 1){
+		hit = smol.hit(r,0.0001,2.4e+30,rec);
+	} else {
+		hitable_list obj = hitable_list(world.hit(r,0,2.4e+30));
+		hit = obj.hit(r,0.0001,2.4e+30,rec);
+	}
+
+	if(bounces != 1){boundedRays++;}
+
+	//hit = world.hit(r,0,2.4e+30,rec);
+
 	if(hit){
 		ray scattered;
 		vec3 attenuation;
 		if(bounces < 50 && rec.mat_ptr->scatter(r,rec,attenuation,scattered)){
-			return attenuation * blend(scattered,bounces + 1,world);
+			return attenuation * blend(scattered,bounces + 1,world,smol);
 		} else {
 			return vec3(0,0,0);
 		}
@@ -111,22 +127,24 @@ int main(int argc, char * argv[]){
 	fast_srand(0);
 	srand(time(NULL));
 	srand48(time(0));
-	const int width = 800;
-	const int height = 400;
 	int rays_per_pixel = std::atoi(argv[1]);
-	int size = 3;
-	hitable* worl[size];
-	/*
-	worl[0] = new sphere(vec3(-1,1,1),0.4f,new diffuse(vec3(0.8,0.2,0.2)));
-	worl[1] = new sphere(vec3(1,1,1),0.5f,new diffuse(vec3(0.5,0.5,0.5)));
-	worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f,new diffuse(vec3(0.8,0.8,0)));
-	*/
+	vec3 origin = vec3(std::atoi(argv[2]),std::atoi(argv[3]),std::atoi(argv[4]));
+
+	const int width = 192;
+	const int height = 108;
+
+	int size = 2;
+	//hitable* worl[size];
+	
+	//worl[0] = new sphere(vec3(1,2,1),2.0f,new metal(vec3(0,0.3,0),0.0f));
+	//worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f,new diffuse(vec3(0.8,0.8,0)));
+	
 
 	std::vector<hitable*> wor = random_scene();
 
-	//BVH hierarchy = BVH(wor,wor.size(),vec3(-11,-0.5,-11),vec3(11,3.5,11));
-	//std::cout << "Tree made" << std::endl;
-	hitable_list world = hitable_list(wor);
+	BVH world = BVH(wor,wor.size(),vec3(-11,-0.5,-11),vec3(11,3.5,11));
+	std::cout << "Tree made" << std::endl;
+	//hitable_list world = hitable_list(wor);
 
 	/*
 	Node* n = hierarchy.root->left->left->right;
@@ -139,41 +157,59 @@ int main(int argc, char * argv[]){
 	std::cout << n->b.inside.size() << std::endl;
 	*/
 
-	vec3 origin = vec3(std::atoi(argv[2]),std::atoi(argv[3]),std::atoi(argv[4]));
-	vec3 lookat =  vec3(0,1,0);
+	vec3 lookat =  vec3(4,1,0);
 	vec3 color;
-	vec3 pixels[width*height];
+	//vec3 pixels[width*height];
 	camera cam = camera(origin,lookat,65,float(width)/float(height));
 	float u,v;
-	float cent = 0;
-	//std::cout << "P3\n" << width << " "<< height << "\n255\n";
+	hitable_list smolworld;
+
+	std::ofstream file;
+	file.open("hell.ppm");
+	file << "P3\n" << width << " "<< height << "\n255\n";
 	for(int i = height-1;i>=0;i--){
 		for(int j=0;j<width;j++){
 			vec3 col = vec3(0,0,0);
+			u = float(j)/float(width);
+			v = float(i)/float(height);
+			ray test = cam.get_ray(u,v);
+			std::set<hitable*> obj1 = world.hit(test,0,2.4e+30);
+			u += (1.0f / float(width));
+			test = cam.get_ray(u,v);
+			world.hit(test,0,2.4e+30,obj1);
+			v += (1.0f / float(height));
+			test = cam.get_ray(u,v);
+			world.hit(test,0,2.4e+30,obj1);
+			u -= (1.0f / float(width));
+			test = cam.get_ray(u,v);
+			world.hit(test,0,2.4e+30,obj1);
+
+			hitable_list smolworld = hitable_list(obj1);
+
 			for(int s=0;s<rays_per_pixel;s++){
 				u = float(j+ran())/float(width);
 				v = float(i+ran())/float(height);
 				ray r = cam.get_ray(u,v);
-//std::cout << "Hello" <<std::endl;
-				col = col + blend(r,1,world);
-//std::cout << "bye";
+				//if(s == 1){smolworld = hitable_list(world.hit(r,0.0,2.4e+30));}
+				col = col + blend(r,1,world,smolworld);
 			}
 			col /= rays_per_pixel;
 			col.x = sqrt(col.x);
 			col.y = sqrt(col.y);
 			col.z = sqrt(col.z);
 			col *= 255.99f;
-			//std::cout << int(col.x) <<" "<<int(col.y)<<" "<<int(col.z)<<"\n";
-			pixels[(height-1 -i)*width + j] = vec3(int(col.x),int(col.y),int(col.z));
-		}if(i%(height/20) == 0){cent += 0.05; std::cout << cent << " done" << std::endl;}
+			file << int(col.x) <<" "<<int(col.y)<<" "<<int(col.z)<<"\n";
+			//pixels[(height-1 -i)*width + j] = vec3(int(col.x),int(col.y),int(col.z));
+		}std::cout << i << " lines to go" << std::endl;
 	}
+	/*
 	std::ofstream file;
 	file.open("hell.ppm");
 	file << "P3\n" << width << " "<< height << "\n255\n";
 	for(int i =0;i<width*height;i++){
 		file << pixels[i].x <<" "<< pixels[i].y <<" "<< pixels[i].z <<"\n";
 	}
-	std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC;
+	*/
+	std::cout << "Time in seconds: " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << std::endl;
+	std::cout << "Bounced rays: " << boundedRays << std::endl;
 }
-
-

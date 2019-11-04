@@ -4,13 +4,15 @@
 #include "hitable.h"
 #include "ray.h"
 #include <vector>
+#include <set>
 
 class hitable_list{
 	public:
 		std::vector<hitable*> list;
 		int size;
 		hitable_list(){}
-		hitable_list(std::vector<hitable*> l){list = l;size = l.size();}
+		hitable_list(std::vector<hitable*>& l){list = l;size = l.size();}
+		hitable_list(std::set<hitable*> l){list = std::vector<hitable*>(l.begin(), l.end());size = l.size();}
 		virtual bool hit(ray& r,float t_min,float t_max,hit_record& rec) const;
 };
 

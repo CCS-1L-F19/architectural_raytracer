@@ -21,7 +21,8 @@ class BVH{
 public:
 	BVH(hitable** world,int n,vec3 b1,vec3 b2);
 	BVH(std::vector<hitable*> world,int n,vec3 b1,vec3 b2);
-	std::vector<hitable*> hit(ray &r,float t_min,float t_max);
+	std::set<hitable*> hit(ray &r,float t_min,float t_max);
+	void hit(ray &r,float t_min,float t_max,std::set<hitable*>& o);
 	void recursiveHit(ray &r,float t_min,float t_max,Node* roott,std::set<hitable*> &o); //used roott because root is local Node*
 
 //private:

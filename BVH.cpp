@@ -77,20 +77,26 @@ BVH::BVH(std::vector<hitable*> world,int n,vec3 b1,vec3 b2){
 	makeTree(root);
 }
 
-std::vector<hitable*> BVH::hit(ray &r,float t_min,float t_max){
+std::set<hitable*> BVH::hit(ray &r,float t_min,float t_max){
 	std::set<hitable*> o;
 	if(root->b.hit(r,t_min,t_max)){
 		recursiveHit(r,t_min,t_max,root,o);
-	} else {
-		o.insert(objects.at(objects.size() - 1));
 	}
-	std::vector<hitable*> v(o.begin(),o.end());
-	return v;
+	o.insert(objects.at(objects.size() - 1));
+	return o;
+}
+
+void BVH::hit(ray &r,float t_min,float t_max,std::set<hitable*>& o){
+	if(root->b.hit(r,t_min,t_max)){
+		recursiveHit(r,t_min,t_max,root,o);
+	}
+	o.insert(objects.at(objects.size() - 1));
+	return;
 }
 
 void BVH::recursiveHit(ray &r,float t_min,float t_max,Node* roott,std::set<hitable*> &o){
 	if(roott->left == NULL || roott->right == NULL){
-		o.insert(root->b.inside.begin(),root->b.inside.end());
+		o.insert(roott->b.inside.begin(),roott->b.inside.end());
 		return;
 	}
 	if(roott->left->b.hit(r,t_min,t_max)){
