@@ -24,6 +24,7 @@ bool refract(const vec3& v, const vec3& n, float ni_over_nt, vec3& refracted) {
 }
 
 bool diffuse::scatter(ray& r_in,hit_record& rec, vec3& attenuation,ray& scattered) const {
+	(void)r_in; // mark param as deliberately unused (https://stackoverflow.com/a/1486931)
 	scattered = ray(rec.p,rec.normal+random_in_sphere());
 	attenuation = albedo;
 	return true;

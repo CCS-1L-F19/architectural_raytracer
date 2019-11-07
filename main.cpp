@@ -188,7 +188,7 @@ int main(int argc, char *argv[])
 	const int width = 192;
 	const int height = 108;
 
-	int size = 2;
+	//int size = 2;
 	//hitable* worl[size];
 
 	//worl[0] = new sphere(vec3(1,2,1),2.0f,new metal(vec3(0,0.3,0),0.0f));
