@@ -7,12 +7,11 @@
 
 using namespace glm;
 
-class triangle : public hitable{
+class triangle : public hitable {
 
 private:
 	vec3 p1,p2,p3;
 	vec3 normal;
-	material* matptr;
 
 public:
 	triangle();

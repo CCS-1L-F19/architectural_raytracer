@@ -18,6 +18,9 @@ class hitable{
 		virtual vec3 min_bound() = 0;
 		virtual vec3 max_bound() = 0;
 		virtual bool in_box(vec3 min,vec3 max) = 0;
+
+	protected:
+		material* matptr;
 };
 
 #endif

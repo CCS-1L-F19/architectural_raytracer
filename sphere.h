@@ -12,7 +12,6 @@ class sphere : public hitable {
 private:
 	vec3 center;
 	float radius;
-	material* matptr;
 
 public:
 	sphere(){};
