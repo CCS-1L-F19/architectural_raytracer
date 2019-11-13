@@ -5,6 +5,7 @@ main
 # Output files specific to this project
 
 *.ppm
+*.png
 
 # Prerequisites
 *.d
