@@ -69,5 +69,6 @@ bool bounding_box::hit(ray & r,float t_min,float t_max) const {
 }
 
 bool bounding_box::in_box(vec3 min,vec3 max){
+	// TODO? 
 	return false;
 }

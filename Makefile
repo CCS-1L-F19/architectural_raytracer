@@ -3,6 +3,9 @@ CXX = g++
 
 CXXFLAGS = -Wall -Wextra -g
 
+main: main.o camera.o sphere.o material.o bounding_box.o BVH.o
+	g++ -g $^ -o $@
+	
 main.o: main.cpp
 	${CXX} ${CXXFLAGS} -c main.cpp 
 material.o: material.cpp
@@ -15,8 +18,7 @@ bounding_box.o: bounding_box.cpp
 	${CXX} ${CXXFLAGS} -c bounding_box.cpp
 BVH.o: BVH.cpp
 	${CXX} ${CXXFLAGS} -c BVH.cpp
-main: main.o camera.o sphere.o material.o bounding_box.o BVH.o
-	g++ -g $^ -o $@
+
 
 clean:
 	rm -f *.o

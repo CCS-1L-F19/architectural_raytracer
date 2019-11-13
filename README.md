@@ -1,4 +1,5 @@
 # architectural_raytracer
+
 Raytracer for rendering architechtural designs in C++ (probably).
 
 ```
@@ -7,13 +8,17 @@ $ make clean
 $ make main
 $ ./main [1] [2] [3] [4]
 ```
-[1]: Rays per Pixel
 
-( [2] , [3] , [4] ): Coordinates of camera
+Where:
+* [1] Rays per pixel
+* [2] [3] [4] are the coordinates of the camera (x,y,z)
 
-Good values for a demo are (1,2,3,4) = (10,6,4,2)
+Example (these are good values for a demo)
+```
+$ ./main 10 6 4 2
+```
 
-The image will be outputted to the image file hell.ppm.
+The image will be outputted to the image file `hell.ppm`.
 
 Open image file in GIMP or [online ppm viewer](http://paulcuth.me.uk/netpbm-viewer/)
 
