@@ -107,5 +107,5 @@ Tree made
 2 lines to go
 1 lines to go
 0 lines to go
-Time in seconds: 298.859
-Bounced rays: 2604243
+Time in seconds: 9.40625
+Bounced rays: 22812
