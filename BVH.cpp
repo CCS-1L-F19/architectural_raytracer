@@ -1,11 +1,18 @@
 #include "BVH.h"
 #include <vector>
+#include <iostream>
+using namespace std;
+
 
 void makeTree(Node* root){
 
-	if(root->b.volume() <= 8.0f){
+	//std::cout << root->b.volume() << " space in this box" << std::endl;
+	//std::cout << root->b.inside.size() << " triangles in this box" << std::endl;
+
+	if(root->b.volume() <= 10.0f || root->b.inside.size() <= 2){
 		root->left = NULL;
 		root->right = NULL;
+		//std::cout << root->b.inside.size() << " triangles in this box" << std::endl;
 		return;
 	}
 	root->left = new Node;
@@ -45,12 +52,22 @@ void makeTree(Node* root){
 			rightobj.push_back((root->b.inside)[i]);
 		}
 	}
-
+	//cout << leftobj.size() << "," << rightobj.size() << endl;
 	root->left->b = bounding_box(leftmin,leftmax,leftobj,leftobj.size());
 	root->right->b = bounding_box(rightmin,rightmax,rightobj,rightobj.size());
+	//std::cout << "_________________" << std::endl;
+	
 
-	makeTree(root->left);
-	makeTree(root->right);
+	//makeTree(root->left);
+	//makeTree(root->right);
+	
+	
+	if(leftobj.size() > 1){makeTree(root->left);}
+	else{delete root->left; root->left = NULL;}
+	if(rightobj.size() > 1){makeTree(root->right);}
+	else{delete root->right;root->right = NULL;}
+
+	return;
 
 }
 
@@ -83,6 +100,7 @@ std::set<hitable*> BVH::hit(ray &r,float t_min,float t_max){
 		recursiveHit(r,t_min,t_max,root,o);
 	}
 	o.insert(objects.at(objects.size() - 1));
+	//if(o.size() > 1)cout << o.size() << endl;
 	return o;
 }
 
@@ -90,19 +108,18 @@ void BVH::hit(ray &r,float t_min,float t_max,std::set<hitable*>& o){
 	if(root->b.hit(r,t_min,t_max)){
 		recursiveHit(r,t_min,t_max,root,o);
 	}
-	o.insert(objects.at(objects.size() - 1));
 	return;
 }
 
 void BVH::recursiveHit(ray &r,float t_min,float t_max,Node* roott,std::set<hitable*> &o){
-	if(roott->left == NULL || roott->right == NULL){
+	if(roott->left == NULL && roott->right == NULL){
 		o.insert(roott->b.inside.begin(),roott->b.inside.end());
 		return;
 	}
-	if(roott->left->b.hit(r,t_min,t_max)){
+	if(roott->left && roott->left->b.hit(r,t_min,t_max)){
 		recursiveHit(r,t_min,t_max,roott->left,o);
 	}
-	if(roott->right->b.hit(r,t_min,t_max)){
+	if(roott->right && roott->right->b.hit(r,t_min,t_max)){
 		recursiveHit(r,t_min,t_max,roott->right,o);
 	}
 }
