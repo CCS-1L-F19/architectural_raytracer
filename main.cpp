@@ -11,8 +11,14 @@
 #include "glm/glm.hpp"
 #include "glm/gtx/norm.hpp"
 #include "BVH.h"
+#include "triangle.h"
 #include <vector>
+#include <set>
 #include <string>
+
+
+using namespace std;
+using namespace glm;
 
 using std::endl;
 using std::cerr;
@@ -46,6 +52,103 @@ vec3 random_in_sphere()
 		v *= 2;
 	} while (length2(v) >= 1);
 	return v;
+}
+
+void consv3(vec3& v,char* facet) {
+
+    char f1[4] = {facet[0],
+        facet[1],facet[2],facet[3]};
+
+    char f2[4] = {facet[4],
+        facet[5],facet[6],facet[7]};
+
+    char f3[4] = {facet[8],
+        facet[9],facet[10],facet[11]};
+
+    v.x = *((float*) f1 );
+    v.y = *((float*) f2 );
+    v.z = *((float*) f3 );
+
+	return;
+
+}
+
+void read_stl(string fname, vector <hitable*>&v){
+
+    //!!
+    //don't forget ios::binary
+    //!!
+    ifstream myFile (
+        fname.c_str(), ios::in | ios::binary);
+
+    char header_info[80] = "";
+    char nTri[4];
+    unsigned long nTriLong;
+
+    //read 80 byte header
+    if (myFile) {
+        myFile.read (header_info, 80);
+        cout <<"header: " << header_info << endl;
+    }
+    else{
+        cout << "error" << endl;
+    }
+
+    //read 4-byte ulong
+    if (myFile) {
+        myFile.read (nTri, 4);
+        nTriLong = *((unsigned long*)nTri) ;
+        cout <<"n Tri: " << nTriLong << endl;
+    }
+    else{
+        cout << "error" << endl;
+    }
+
+    //now read in all the triangles
+    for(int i = 0; i < 90000; i++){
+
+        char facet[50];
+
+        if (myFile) {
+
+        //read one 50-byte triangle
+            myFile.read (facet, 50);
+
+        //populate each point of the triangle
+        //using v3::v3(char* bin);
+            //facet + 12 skips the triangle's unit normal
+            float tmp;
+            vec3 p1,p2,p3,normal;
+            consv3(normal,facet);
+            tmp = normal.y;
+            normal.y = normal.z;
+            normal.z = -1.0f * tmp;
+            consv3(p1,facet+12);
+            tmp = p1.y;
+            p1.y = p1.z;
+            p1.z = -1.0f * tmp;
+            consv3(p2,facet+24);
+            tmp = p2.y;
+            p2.y = p2.z;
+            p2.z = -1.0f * tmp;
+            consv3(p3,facet+36);
+            tmp = p3.y;
+            p3.y = p3.z;
+            p3.z = -1.0f * tmp;
+
+
+            //cout << "p1: " << p1.x << "," << p1.y << "," << p1.z << endl;
+            //add a new triangle to the array
+            v.push_back(new triangle(p1,p2,p3,new metal(vec3(0.1,0.8,0.1),0.1f)));
+
+            //add sphere
+            //vec3 avg = (p1+p2+p3)/3.0f;
+            //v.push_back(new sphere(avg,0.5f,new metal(vec3(0.9,0.1,0.1),0.1f)));
+        }
+    }
+
+    return;
+
 }
 
 std::vector<hitable *> random_scene()
@@ -90,6 +193,7 @@ std::vector<hitable *> random_scene()
 	list[i++] = new sphere(vec3(0, 1, 0), -1.0, new dielectric(1.5));
 	list[i++] = new sphere(vec3(-4, 1, 0), 1.0, new diffuse(vec3(1, 1, 0)));
 	list[i++] = new sphere(vec3(4, 1, 0), 1.0, new metal(vec3(0.4, 0.4, 0.8), 0.0));
+	list[i++] = new triangle(vec3(-5,0,5),vec3(5,0,5),vec3(0,8,5),new metal(vec3(0.3,0.9,0.3),0.1f));
 	list[i++] = new sphere(vec3(0, -1000, 0), 1000, new diffuse(vec3(0.5, 0.5, 0.5)));
 
 	std::vector<hitable *> v(list, list + i);
@@ -98,23 +202,14 @@ std::vector<hitable *> random_scene()
 
 int boundedRays = 0;
 
-vec3 blend(ray &r, int bounces, BVH &world, hitable_list &smol)
+vec3 blend(ray &r, int bounces, BVH &world)
 {
 	bool hit;
 	hit_record rec;
 	rec.mat_ptr = NULL;
 
-	hitable_list obj;
-
-	if (bounces == 1)
-	{
-		hit = smol.hit(r, 0.0001, 2.4e+30, rec);
-	}
-	else
-	{
-		hitable_list obj = hitable_list(world.hit(r, 0, 2.4e+30));
-		hit = obj.hit(r, 0.0001, 2.4e+30, rec);
-	}
+	hitable_list obj = hitable_list(world.hit(r, 0, 2.4e+30));
+	hit = obj.hit(r, 0.0001, 2.4e+30, rec);
 
 	if (bounces != 1)
 	{
@@ -129,7 +224,7 @@ vec3 blend(ray &r, int bounces, BVH &world, hitable_list &smol)
 		vec3 attenuation;
 		if (bounces < 50 && rec.mat_ptr->scatter(r, rec, attenuation, scattered))
 		{
-			return attenuation * blend(scattered, bounces + 1, world, smol);
+			return attenuation * blend(scattered, bounces + 1, world);
 		}
 		else
 		{
@@ -185,43 +280,45 @@ int main(int argc, char *argv[])
 
 	vec3 origin = vec3(x,y,z);
 	
-	const int width = 192;
-	const int height = 108;
+	const int scale = 5;
+
+	const int width = 192*scale;
+	const int height = 108*scale;
 
 	//int size = 2;
 	//hitable* worl[size];
 
-	//worl[0] = new sphere(vec3(1,2,1),2.0f,new metal(vec3(0,0.3,0),0.0f));
+	//worl[0] = new triangle(vec3(20,0,0),vec3(-20,0,0),vec3(0,40,0),new diffuse(vec3(0.9,0.3,0.3)));
 	//worl[size - 1] = new sphere(vec3(0,-100.5,-1),100.0f,new diffuse(vec3(0.8,0.8,0)));
 
-	std::vector<hitable *> wor = random_scene();
+	//std::vector<hitable *> wor = random_scene();
 
-	BVH world = BVH(wor, wor.size(), vec3(-11, -0.5, -11), vec3(11, 3.5, 11));
+	vector<hitable*> worl;
+	read_stl("bunny.stl",worl);
+	cout << "Read stl" << endl;
+	//worl.push_back(new triangle(vec3(20,20,0),vec3(-20,20,0),vec3(0,40,0),new diffuse(vec3(0.9,0.3,0.3))));
+	worl.push_back(new sphere(vec3(0, -1000, 0), 990, new diffuse(vec3(0.5, 0.5, 0.5))));
+    cout << worl.size()<< endl;
+
+	//BVH world = BVH(wor, wor.size(), vec3(-11, -3, -11), vec3(11, 11, 11));
+	BVH world = BVH(worl, worl.size(), vec3(-60, -3, -60), vec3(60, 150, 60));
 	std::cout << "Tree made" << std::endl;
 	//hitable_list world = hitable_list(wor);
 
-	/*
-	Node* n = hierarchy.root->left->left->right;
-	std::cout << n->b.bound1.x << ",";
-	std::cout << n->b.bound1.y << ",";
-	std::cout << n->b.bound1.z << ":";
-	std::cout << n->b.bound2.x << ",";
-	std::cout << n->b.bound2.y << ",";
-	std::cout << n->b.bound2.z << ":";
-	std::cout << n->b.inside.size() << std::endl;
-	*/
-
-	vec3 lookat = vec3(4, 1, 0);
-	vec3 color;
+	vec3 lookat = vec3(0,8,0);
 	//vec3 pixels[width*height];
 	camera cam = camera(origin, lookat, 65, float(width) / float(height));
 	float u, v;
-	hitable_list smolworld;
+
+	set<hitable*> smolworld;
+	//hitable_list smol;
 
 	std::ofstream file;
 	file.open("hell.ppm");
-	file << "P3\n"
-		 << width << " " << height << "\n255\n";
+	file << "P3\n" << width << " " << height << "\n255\n";
+
+
+
 	for (int i = height - 1; i >= 0; i--)
 	{
 		for (int j = 0; j < width; j++)
@@ -229,27 +326,19 @@ int main(int argc, char *argv[])
 			vec3 col = vec3(0, 0, 0);
 			u = float(j) / float(width);
 			v = float(i) / float(height);
-			ray test = cam.get_ray(u, v);
-			std::set<hitable *> obj1 = world.hit(test, 0, 2.4e+30);
-			u += (1.0f / float(width));
-			test = cam.get_ray(u, v);
-			world.hit(test, 0, 2.4e+30, obj1);
-			v += (1.0f / float(height));
-			test = cam.get_ray(u, v);
-			world.hit(test, 0, 2.4e+30, obj1);
-			u -= (1.0f / float(width));
-			test = cam.get_ray(u, v);
-			world.hit(test, 0, 2.4e+30, obj1);
+			
+			ray testRay = cam.get_ray(u,v);
+			smolworld = world.hit(testRay,0,2.4e+30);
 
-			hitable_list smolworld = hitable_list(obj1);
+			//if(smolworld.size() > 1)cout << smolworld.size() << " objects in this pixel: (" <<height -1 -i <<","<<j<<")"<< endl;
+			
 
 			for (int s = 0; s < rays_per_pixel; s++)
 			{
 				u = float(j + ran()) / float(width);
 				v = float(i + ran()) / float(height);
 				ray r = cam.get_ray(u, v);
-				//if(s == 1){smolworld = hitable_list(world.hit(r,0.0,2.4e+30));}
-				col = col + blend(r, 1, world, smolworld);
+				col = col + blend(r, 1, world);
 			}
 			col /= rays_per_pixel;
 			col.x = sqrt(col.x);
@@ -257,9 +346,9 @@ int main(int argc, char *argv[])
 			col.z = sqrt(col.z);
 			col *= 255.99f;
 			file << int(col.x) << " " << int(col.y) << " " << int(col.z) << "\n";
+			//if((height-1-i)+j % 1000 == 0)cout << (height-1-i)*width + j << " pixels done" << endl;
 			//pixels[(height-1 -i)*width + j] = vec3(int(col.x),int(col.y),int(col.z));
-		}
-		std::cout << i << " lines to go" << std::endl;
+		}cout << i << " lines to go" << endl;
 	}
 	/*
 	std::ofstream file;

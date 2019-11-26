@@ -5,6 +5,7 @@ main
 # Output files specific to this project
 
 *.ppm
+*.png
 
 # Prerequisites
 *.d
@@ -38,3 +39,6 @@ main
 *.exe
 *.out
 *.app
+
+#3D Models
+*.stl

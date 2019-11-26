@@ -8,11 +8,12 @@
 
 
 class sphere : public hitable {
-	public:
+
+private:
 	vec3 center;
 	float radius;
-	material* matptr;
 
+public:
 	sphere(){};
 	sphere(vec3 cen,float r,material* m);
 	
