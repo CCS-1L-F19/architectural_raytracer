@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="BVH_8h" kind="file" language="C++">
+    <compoundname>BVH.h</compoundname>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes refid="bounding__box_8h" local="yes">bounding_box.h</includes>
+    <includes refid="hitable_8h" local="yes">hitable.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">set</includes>
+    <includedby refid="BVH_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="165">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>bounding_box.h</label>
+        <link refid="bounding__box_8h_source"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="161">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h</label>
+        <link refid="BVH_8h"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>vector</label>
+      </node>
+      <node id="164">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+      </node>
+      <node id="167">
+        <label>set</label>
+      </node>
+      <node id="162">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structNode" prot="public">Node</innerclass>
+    <innerclass refid="classBVH" prot="public">BVH</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>BVHH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BVHH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;bounding_box.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hitable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="structNode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structNode" kindref="compound">Node</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structNode" kindref="compound">Node</ref>*<sp/>left;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structNode" kindref="compound">Node</ref>*<sp/>right;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>axis;<sp/></highlight><highlight class="comment">//axis<sp/>to<sp/>split<sp/>left<sp/>and<sp/>right<sp/>along</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//0:x,1:y,2:z</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref><sp/>b;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structNode" kindref="compound">Node</ref>(){}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classBVH" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classBVH" kindref="compound">BVH</ref>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBVH" kindref="compound">BVH</ref>(<ref refid="classhitable" kindref="compound">hitable</ref>**<sp/>world,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,vec3<sp/>b1,vec3<sp/>b2);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBVH" kindref="compound">BVH</ref>(std::vector&lt;hitable*&gt;<sp/>world,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,vec3<sp/>b1,vec3<sp/>b2);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set&lt;hitable*&gt;<sp/>hit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max,std::set&lt;hitable*&gt;&amp;<sp/>o);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>recursiveHit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max,<ref refid="structNode" kindref="compound">Node</ref>*<sp/>roott,std::set&lt;hitable*&gt;<sp/>&amp;o);<sp/></highlight><highlight class="comment">//used<sp/>roott<sp/>because<sp/>root<sp/>is<sp/>local<sp/>Node*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structNode" kindref="compound">Node</ref>*<sp/>root;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numobjects;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;hitable*&gt;<sp/>objects;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h"/>
+  </compounddef>
+</doxygen>

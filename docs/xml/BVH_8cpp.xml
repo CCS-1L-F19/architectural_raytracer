@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="BVH_8cpp" kind="file" language="C++">
+    <compoundname>BVH.cpp</compoundname>
+    <includes refid="BVH_8h" local="yes">BVH.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="156">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>bounding_box.h</label>
+        <link refid="bounding__box_8h_source"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>BVH.h</label>
+        <link refid="BVH_8h_source"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>vector</label>
+      </node>
+      <node id="159">
+        <label>iostream</label>
+      </node>
+      <node id="155">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>set</label>
+      </node>
+      <node id="151">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp</label>
+        <link refid="BVH_8cpp"/>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacestd">std</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="BVH_8cpp_1a553373440c78164c0a2126894d07527e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void makeTree</definition>
+        <argsstring>(Node *root)</argsstring>
+        <name>makeTree</name>
+        <param>
+          <type><ref refid="structNode" kindref="compound">Node</ref> *</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" line="7" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" bodystart="7" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;BVH.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>makeTree(<ref refid="structNode" kindref="compound">Node</ref>*<sp/>root){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>root-&gt;b.volume()<sp/>&lt;&lt;<sp/>&quot;<sp/>space<sp/>in<sp/>this<sp/>box&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>root-&gt;b.inside.size()<sp/>&lt;&lt;<sp/>&quot;<sp/>triangles<sp/>in<sp/>this<sp/>box&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(root-&gt;b.volume()<sp/>&lt;=<sp/>10.0f<sp/>||<sp/>root-&gt;b.inside.size()<sp/>&lt;=<sp/>2){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;left<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;right<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>root-&gt;b.inside.size()<sp/>&lt;&lt;<sp/>&quot;<sp/>triangles<sp/>in<sp/>this<sp/>box&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;left<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structNode" kindref="compound">Node</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;right<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structNode" kindref="compound">Node</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>leftmin,rightmin,leftmax,rightmax;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>rightmax<sp/>=<sp/>root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>leftmin<sp/>=<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(root-&gt;axis){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftmax<sp/>=<sp/>vec3((root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x<sp/>+<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x)/2.0,root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y,root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightmin<sp/>=<sp/>vec3((root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x<sp/>+<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x)/2.0,root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y,root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;left-&gt;axis<sp/>=<sp/>root-&gt;axis<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;right-&gt;axis<sp/>=<sp/>root-&gt;axis<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftmax<sp/>=<sp/>vec3(root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x,(root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>+<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y)/2.0,root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightmin<sp/>=<sp/>vec3(root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x,(root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>+<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y)/2.0,root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;left-&gt;axis<sp/>=<sp/>root-&gt;axis<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;right-&gt;axis<sp/>=<sp/>root-&gt;axis<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftmax<sp/>=<sp/>vec3(root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x,root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y,(root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z<sp/>+<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z)/2.0);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightmin<sp/>=<sp/>vec3(root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x,root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y,(root-&gt;b.<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z<sp/>+<sp/>root-&gt;b.<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z)/2.0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;left-&gt;axis<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root-&gt;right-&gt;axis<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;hitable*&gt;<sp/>leftobj;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;hitable*&gt;<sp/>rightobj;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=0;i&lt;root-&gt;b.<ref refid="classbounding__box_1a0a5d20a1e613f37efb0f2f5aeae24a82" kindref="member">numobjects</ref>;i++){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((root-&gt;b.inside)[i]-&gt;in_box(leftmin,leftmax)){</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftobj.push_back((root-&gt;b.inside)[i]);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((root-&gt;b.inside)[i]-&gt;in_box(rightmin,rightmax)){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightobj.push_back((root-&gt;b.inside)[i]);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout<sp/>&lt;&lt;<sp/>leftobj.size()<sp/>&lt;&lt;<sp/>&quot;,&quot;<sp/>&lt;&lt;<sp/>rightobj.size()<sp/>&lt;&lt;<sp/>endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;left-&gt;b<sp/>=<sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(leftmin,leftmax,leftobj,leftobj.size());</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;right-&gt;b<sp/>=<sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(rightmin,rightmax,rightobj,rightobj.size());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;_________________&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//makeTree(root-&gt;left);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//makeTree(root-&gt;right);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(leftobj.size()<sp/>&gt;<sp/>1){makeTree(root-&gt;left);}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>root-&gt;left;<sp/>root-&gt;left<sp/>=<sp/>NULL;}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rightobj.size()<sp/>&gt;<sp/>1){makeTree(root-&gt;right);}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>root-&gt;right;root-&gt;right<sp/>=<sp/>NULL;}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><ref refid="classBVH_1aa0760b0b7228793d38ea6ea30e6d3b27" kindref="member">BVH::BVH</ref>(<ref refid="classhitable" kindref="compound">hitable</ref>**<sp/>world,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,vec3<sp/>b1,vec3<sp/>b2){</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>numobjects<sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=0;i&lt;n;i++){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objects.push_back(world[i]);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>root<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structNode" kindref="compound">Node</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;b<sp/>=<sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(b1,b2,objects,n);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;axis<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>makeTree(root);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="classBVH_1aa0760b0b7228793d38ea6ea30e6d3b27" kindref="member">BVH::BVH</ref>(std::vector&lt;hitable*&gt;<sp/>world,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,vec3<sp/>b1,vec3<sp/>b2){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>numobjects<sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>objects<sp/>=<sp/>world;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>root<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structNode" kindref="compound">Node</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;b<sp/>=<sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(b1,b2,objects,n);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>root-&gt;axis<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>makeTree(root);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">std::set&lt;hitable*&gt;<sp/>BVH::hit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set&lt;hitable*&gt;<sp/>o;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(root-&gt;b.<ref refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kindref="member">hit</ref>(r,t_min,t_max)){</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recursiveHit(r,t_min,t_max,root,o);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>o.insert(objects.at(objects.size()<sp/>-<sp/>1));</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(o.size()<sp/>&gt;<sp/>1)cout<sp/>&lt;&lt;<sp/>o.size()<sp/>&lt;&lt;<sp/>endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>o;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BVH::hit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max,std::set&lt;hitable*&gt;&amp;<sp/>o){</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(root-&gt;b.<ref refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kindref="member">hit</ref>(r,t_min,t_max)){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recursiveHit(r,t_min,t_max,root,o);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BVH::recursiveHit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max,<ref refid="structNode" kindref="compound">Node</ref>*<sp/>roott,std::set&lt;hitable*&gt;<sp/>&amp;o){</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(roott-&gt;left<sp/>==<sp/>NULL<sp/>&amp;&amp;<sp/>roott-&gt;right<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o.insert(roott-&gt;b.inside.begin(),roott-&gt;b.inside.end());</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(roott-&gt;left<sp/>&amp;&amp;<sp/>roott-&gt;left-&gt;b.<ref refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kindref="member">hit</ref>(r,t_min,t_max)){</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recursiveHit(r,t_min,t_max,roott-&gt;left,o);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(roott-&gt;right<sp/>&amp;&amp;<sp/>roott-&gt;right-&gt;b.<ref refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kindref="member">hit</ref>(r,t_min,t_max)){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recursiveHit(r,t_min,t_max,roott-&gt;right,o);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp"/>
+  </compounddef>
+</doxygen>

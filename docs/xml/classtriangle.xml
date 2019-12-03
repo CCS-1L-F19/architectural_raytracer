@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtriangle" kind="class" language="C++" prot="public">
+    <compoundname>triangle</compoundname>
+    <basecompoundref refid="classhitable" prot="public" virt="non-virtual">hitable</basecompoundref>
+    <includes refid="triangle_8h" local="no">triangle.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtriangle_1a4267b8eadc087f60f67e1681e1891216" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 triangle::p1</definition>
+        <argsstring></argsstring>
+        <name>p1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="14" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtriangle_1aaac41c4b79a5cb6c54a945d1bdaf0fe4" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 triangle::p2</definition>
+        <argsstring></argsstring>
+        <name>p2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="14" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtriangle_1a528a59a6e5519ea9a5835d458fb19dc1" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 triangle::p3</definition>
+        <argsstring></argsstring>
+        <name>p3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="14" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtriangle_1ac0103b1d5b30325a6b785b50bd9eba8a" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 triangle::normal</definition>
+        <argsstring></argsstring>
+        <name>normal</name>
+        <briefdescription>
+<para>two normals used in order to ensure triangle will be visible in any orientation </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtriangle_1ad7c01593b389e593f371e2b3011b96a5" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 triangle::negnormal</definition>
+        <argsstring></argsstring>
+        <name>negnormal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtriangle_1a59813fc729a711859e0df36028d2d2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool triangle::overlap</definition>
+        <argsstring>(vec3 axis, vec3 min, vec3 max)</argsstring>
+        <name>overlap</name>
+        <param>
+          <type>vec3</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="17" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="52" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1ac176bae9dc8cd99ca393c9f360760387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>triangle::triangle</definition>
+        <argsstring>()</argsstring>
+        <name>triangle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="20" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="5" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1afe8b844c6cbb2a851ed3d611069446fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>triangle::triangle</definition>
+        <argsstring>(vec3 p1, vec3 p2, vec3 p3, vec3 normal, material *matptr)</argsstring>
+        <name>triangle</name>
+        <param>
+          <type>vec3</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>p2</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>p3</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>normal</declname>
+        </param>
+        <param>
+          <type><ref refid="classmaterial" kindref="compound">material</ref> *</type>
+          <declname>matptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="21" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="14" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1a3c3df992e857457a9ac360f858180b1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>triangle::triangle</definition>
+        <argsstring>(vec3 p1, vec3 p2, vec3 p3, material *matptr)</argsstring>
+        <name>triangle</name>
+        <param>
+          <type>vec3</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>p2</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>p3</declname>
+        </param>
+        <param>
+          <type><ref refid="classmaterial" kindref="compound">material</ref> *</type>
+          <declname>matptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="22" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="23" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1a1922fe413161f745db0abf7b5f5a5a3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>triangle::~triangle</definition>
+        <argsstring>()</argsstring>
+        <name>~triangle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1ac18d5da9f057e8531cc24c2c800d5042" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>vec3</type>
+        <definition>vec3 triangle::min_bound</definition>
+        <argsstring>()</argsstring>
+        <name>min_bound</name>
+        <reimplements refid="classhitable_1ae7cfa0d0445eb013ebe646fb2e4d9877">min_bound</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="24" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="32" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1a956f30e917b4f1b0fac36044a566b57f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>vec3</type>
+        <definition>vec3 triangle::max_bound</definition>
+        <argsstring>()</argsstring>
+        <name>max_bound</name>
+        <reimplements refid="classhitable_1abd9db9596a4f5bcb765b02ffb31de39c">max_bound</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="25" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="42" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1a47af01f4325462cc2a86bd4dcb61d8cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool triangle::hit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max, hit_record &amp;rec) const</argsstring>
+        <name>hit</name>
+        <reimplements refid="classhitable_1a266c04b5d3274c9e5eac7d2834bb1342">hit</reimplements>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <briefdescription>
+<para>determine whether ray hits triangle using inside-outside test </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="27" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="157" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classtriangle_1acc11a7da8ab72f36669b5c3f1094925b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool triangle::in_box</definition>
+        <argsstring>(vec3 min, vec3 max)</argsstring>
+        <name>in_box</name>
+        <reimplements refid="classhitable_1a02ab6294341e1928ca3d78fca62d0748">in_box</reimplements>
+        <param>
+          <type>vec3</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>determine whether triangle is inside a bounding-box using Seperating Axis Theorem </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="29" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp" bodystart="89" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Triangle class used in drawing any stl file. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="45">
+        <label>triangle</label>
+        <link refid="classtriangle"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>hitable</label>
+        <link refid="classhitable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="47">
+        <label>triangle</label>
+        <link refid="classtriangle"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+      <node id="48">
+        <label>hitable</label>
+        <link refid="classhitable"/>
+        <childnode refid="49" relation="usage">
+          <edgelabel>matptr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" line="11" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h" bodystart="11" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classtriangle_1a47af01f4325462cc2a86bd4dcb61d8cf" prot="public" virt="virtual"><scope>triangle</scope><name>hit</name></member>
+      <member refid="classtriangle_1acc11a7da8ab72f36669b5c3f1094925b" prot="public" virt="virtual"><scope>triangle</scope><name>in_box</name></member>
+      <member refid="classhitable_1aacc372725176a70749477e1a358d9609" prot="protected" virt="non-virtual"><scope>triangle</scope><name>matptr</name></member>
+      <member refid="classtriangle_1a956f30e917b4f1b0fac36044a566b57f" prot="public" virt="virtual"><scope>triangle</scope><name>max_bound</name></member>
+      <member refid="classtriangle_1ac18d5da9f057e8531cc24c2c800d5042" prot="public" virt="virtual"><scope>triangle</scope><name>min_bound</name></member>
+      <member refid="classtriangle_1ad7c01593b389e593f371e2b3011b96a5" prot="public" virt="non-virtual"><scope>triangle</scope><name>negnormal</name></member>
+      <member refid="classtriangle_1ac0103b1d5b30325a6b785b50bd9eba8a" prot="public" virt="non-virtual"><scope>triangle</scope><name>normal</name></member>
+      <member refid="classtriangle_1a59813fc729a711859e0df36028d2d2d6" prot="public" virt="non-virtual"><scope>triangle</scope><name>overlap</name></member>
+      <member refid="classtriangle_1a4267b8eadc087f60f67e1681e1891216" prot="public" virt="non-virtual"><scope>triangle</scope><name>p1</name></member>
+      <member refid="classtriangle_1aaac41c4b79a5cb6c54a945d1bdaf0fe4" prot="public" virt="non-virtual"><scope>triangle</scope><name>p2</name></member>
+      <member refid="classtriangle_1a528a59a6e5519ea9a5835d458fb19dc1" prot="public" virt="non-virtual"><scope>triangle</scope><name>p3</name></member>
+      <member refid="classtriangle_1ac176bae9dc8cd99ca393c9f360760387" prot="public" virt="non-virtual"><scope>triangle</scope><name>triangle</name></member>
+      <member refid="classtriangle_1afe8b844c6cbb2a851ed3d611069446fd" prot="public" virt="non-virtual"><scope>triangle</scope><name>triangle</name></member>
+      <member refid="classtriangle_1a3c3df992e857457a9ac360f858180b1e" prot="public" virt="non-virtual"><scope>triangle</scope><name>triangle</name></member>
+      <member refid="classtriangle_1a1922fe413161f745db0abf7b5f5a5a3d" prot="public" virt="non-virtual"><scope>triangle</scope><name>~triangle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

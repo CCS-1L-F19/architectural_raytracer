@@ -1,0 +1,71 @@
+\hypertarget{classtriangle}{}\section{triangle Class Reference}
+\label{classtriangle}\index{triangle@{triangle}}
+
+
+Triangle class used in drawing any stl file.  
+
+
+
+
+{\ttfamily \#include $<$triangle.\+h$>$}
+
+
+
+Inheritance diagram for triangle\+:
+% FIG 0
+
+
+Collaboration diagram for triangle\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtriangle_a59813fc729a711859e0df36028d2d2d6}\label{classtriangle_a59813fc729a711859e0df36028d2d2d6}} 
+bool {\bfseries overlap} (vec3 axis, vec3 min, vec3 max)
+\item 
+\mbox{\Hypertarget{classtriangle_afe8b844c6cbb2a851ed3d611069446fd}\label{classtriangle_afe8b844c6cbb2a851ed3d611069446fd}} 
+{\bfseries triangle} (vec3 p1, vec3 p2, vec3 p3, vec3 \hyperlink{classtriangle_ac0103b1d5b30325a6b785b50bd9eba8a}{normal}, \hyperlink{classmaterial}{material} $\ast$matptr)
+\item 
+\mbox{\Hypertarget{classtriangle_a3c3df992e857457a9ac360f858180b1e}\label{classtriangle_a3c3df992e857457a9ac360f858180b1e}} 
+{\bfseries triangle} (vec3 p1, vec3 p2, vec3 p3, \hyperlink{classmaterial}{material} $\ast$matptr)
+\item 
+\mbox{\Hypertarget{classtriangle_ac18d5da9f057e8531cc24c2c800d5042}\label{classtriangle_ac18d5da9f057e8531cc24c2c800d5042}} 
+vec3 {\bfseries min\+\_\+bound} ()
+\item 
+\mbox{\Hypertarget{classtriangle_a956f30e917b4f1b0fac36044a566b57f}\label{classtriangle_a956f30e917b4f1b0fac36044a566b57f}} 
+vec3 {\bfseries max\+\_\+bound} ()
+\item 
+\mbox{\Hypertarget{classtriangle_a47af01f4325462cc2a86bd4dcb61d8cf}\label{classtriangle_a47af01f4325462cc2a86bd4dcb61d8cf}} 
+bool \hyperlink{classtriangle_a47af01f4325462cc2a86bd4dcb61d8cf}{hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max, \hyperlink{structhit__record}{hit\+\_\+record} \&rec) const
+\begin{DoxyCompactList}\small\item\em determine whether ray hits triangle using inside-\/outside test \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangle_acc11a7da8ab72f36669b5c3f1094925b}\label{classtriangle_acc11a7da8ab72f36669b5c3f1094925b}} 
+bool \hyperlink{classtriangle_acc11a7da8ab72f36669b5c3f1094925b}{in\+\_\+box} (vec3 min, vec3 max)
+\begin{DoxyCompactList}\small\item\em determine whether triangle is inside a bounding-\/box using Seperating Axis Theorem \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtriangle_a4267b8eadc087f60f67e1681e1891216}\label{classtriangle_a4267b8eadc087f60f67e1681e1891216}} 
+vec3 {\bfseries p1}
+\item 
+\mbox{\Hypertarget{classtriangle_aaac41c4b79a5cb6c54a945d1bdaf0fe4}\label{classtriangle_aaac41c4b79a5cb6c54a945d1bdaf0fe4}} 
+vec3 {\bfseries p2}
+\item 
+\mbox{\Hypertarget{classtriangle_a528a59a6e5519ea9a5835d458fb19dc1}\label{classtriangle_a528a59a6e5519ea9a5835d458fb19dc1}} 
+vec3 {\bfseries p3}
+\item 
+\mbox{\Hypertarget{classtriangle_ac0103b1d5b30325a6b785b50bd9eba8a}\label{classtriangle_ac0103b1d5b30325a6b785b50bd9eba8a}} 
+vec3 \hyperlink{classtriangle_ac0103b1d5b30325a6b785b50bd9eba8a}{normal}
+\begin{DoxyCompactList}\small\item\em two normals used in order to ensure triangle will be visible in any orientation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangle_ad7c01593b389e593f371e2b3011b96a5}\label{classtriangle_ad7c01593b389e593f371e2b3011b96a5}} 
+vec3 {\bfseries negnormal}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Triangle class used in drawing any stl file. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/triangle.\+h\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/triangle.\+cpp\end{DoxyCompactItemize}

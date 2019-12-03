@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classmetal" kind="class" language="C++" prot="public">
+    <compoundname>metal</compoundname>
+    <basecompoundref refid="classmaterial" prot="public" virt="non-virtual">material</basecompoundref>
+    <includes refid="material_8h" local="no">material.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmetal_1a7c16624a6f180f58c3bda5558c71e7c1" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 metal::albedo</definition>
+        <argsstring></argsstring>
+        <name>albedo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="27" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmetal_1a7b1a155f70bf086fc84c4c17d1e6f88c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float metal::fuzz</definition>
+        <argsstring></argsstring>
+        <name>fuzz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="28" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmetal_1af79883340e12b0c5db5afe23f5383942" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>metal::metal</definition>
+        <argsstring>(vec3 a, float f)</argsstring>
+        <name>metal</name>
+        <param>
+          <type>vec3</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="29" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classmetal_1a10a5e6a8335687f98b58ea59cac5b694" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool metal::scatter</definition>
+        <argsstring>(ray &amp;r_in, hit_record &amp;rec, vec3 &amp;attenuation, ray &amp;scattered) const</argsstring>
+        <name>scatter</name>
+        <reimplements refid="classmaterial_1a2da9f6f33e921d48b7b6e753fbe68cc7">scatter</reimplements>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r_in</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <param>
+          <type>vec3 &amp;</type>
+          <declname>attenuation</declname>
+        </param>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>scattered</declname>
+        </param>
+        <briefdescription>
+<para>rays are perfectly reflected for shiny reflectiveness </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="31" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.cpp" bodystart="37" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>reflective metal </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="32">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+      <node id="31">
+        <label>metal</label>
+        <link refid="classmetal"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="34">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+      <node id="33">
+        <label>metal</label>
+        <link refid="classmetal"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="25" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="25" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classmetal_1a7c16624a6f180f58c3bda5558c71e7c1" prot="public" virt="non-virtual"><scope>metal</scope><name>albedo</name></member>
+      <member refid="classmetal_1a7b1a155f70bf086fc84c4c17d1e6f88c" prot="public" virt="non-virtual"><scope>metal</scope><name>fuzz</name></member>
+      <member refid="classmetal_1af79883340e12b0c5db5afe23f5383942" prot="public" virt="non-virtual"><scope>metal</scope><name>metal</name></member>
+      <member refid="classmetal_1a10a5e6a8335687f98b58ea59cac5b694" prot="public" virt="virtual"><scope>metal</scope><name>scatter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

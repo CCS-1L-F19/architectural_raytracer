@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ray_8h" kind="file" language="C++">
+    <compoundname>ray.h</compoundname>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includedby refid="bounding__box_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.h</includedby>
+    <includedby refid="hitable_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h</includedby>
+    <includedby refid="camera_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h</includedby>
+    <includedby refid="camera_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.cpp</includedby>
+    <includedby refid="hitable__list_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h</includedby>
+    <includedby refid="main_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp</includedby>
+    <includedby refid="material_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h</includedby>
+    <includedby refid="triangle_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h</includedby>
+    <includedby refid="material_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.cpp</includedby>
+    <incdepgraph>
+      <node id="293">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="294" relation="include">
+        </childnode>
+      </node>
+      <node id="294">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="303">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h</label>
+        <link refid="camera_8h_source"/>
+      </node>
+      <node id="300">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h</label>
+        <link refid="sphere_8h_source"/>
+      </node>
+      <node id="299">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h</label>
+        <link refid="hitable__list_8h_source"/>
+      </node>
+      <node id="302">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h</label>
+        <link refid="triangle_8h_source"/>
+      </node>
+      <node id="298">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="300" relation="include">
+        </childnode>
+        <childnode refid="301" relation="include">
+        </childnode>
+        <childnode refid="302" relation="include">
+        </childnode>
+      </node>
+      <node id="296">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.h</label>
+        <link refid="bounding__box_8h_source"/>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="297">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h</label>
+        <link refid="BVH_8h_source"/>
+      </node>
+      <node id="295">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+        <childnode refid="303" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="301" relation="include">
+        </childnode>
+        <childnode refid="302" relation="include">
+        </childnode>
+      </node>
+      <node id="301">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h</label>
+        <link refid="material_8h_source"/>
+        <childnode refid="300" relation="include">
+        </childnode>
+        <childnode refid="302" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classray" prot="public">ray</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RAYH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RAYH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceglm" kindref="compound">glm</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classray" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classray" kindref="compound">ray</ref>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>a;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>b;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classray" kindref="compound">ray</ref>(){}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classray" kindref="compound">ray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vec3<sp/>&amp;<sp/>A,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vec3<sp/>&amp;<sp/>B){a<sp/>=<sp/>A;b<sp/>=<sp/>normalize(B);}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>origin(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a;}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>dir(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>b;}</highlight></codeline>
+<codeline lineno="21" refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a<sp/>+<sp/>b*t;}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h"/>
+  </compounddef>
+</doxygen>

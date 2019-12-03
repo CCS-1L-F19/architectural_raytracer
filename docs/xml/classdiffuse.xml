@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classdiffuse" kind="class" language="C++" prot="public">
+    <compoundname>diffuse</compoundname>
+    <basecompoundref refid="classmaterial" prot="public" virt="non-virtual">material</basecompoundref>
+    <includes refid="material_8h" local="no">material.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classdiffuse_1afe88849d7ff153c6349a65c469136d5a" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 diffuse::albedo</definition>
+        <argsstring></argsstring>
+        <name>albedo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="18" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdiffuse_1a35de250e9e0a1a5ef292627f49c902e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>diffuse::diffuse</definition>
+        <argsstring>(vec3 a)</argsstring>
+        <name>diffuse</name>
+        <param>
+          <type>vec3</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="19" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classdiffuse_1a4876bba63de5563e0c4b6460224e4bb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool diffuse::scatter</definition>
+        <argsstring>(ray &amp;r_in, hit_record &amp;rec, vec3 &amp;attenuation, ray &amp;scattered) const</argsstring>
+        <name>scatter</name>
+        <reimplements refid="classmaterial_1a2da9f6f33e921d48b7b6e753fbe68cc7">scatter</reimplements>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r_in</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <param>
+          <type>vec3 &amp;</type>
+          <declname>attenuation</declname>
+        </param>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>scattered</declname>
+        </param>
+        <briefdescription>
+<para>rays are randomly scattered to produce diffuse effect </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="21" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>lambertian material </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="12">
+        <label>diffuse</label>
+        <link refid="classdiffuse"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="14">
+        <label>diffuse</label>
+        <link refid="classdiffuse"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="16" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classdiffuse_1afe88849d7ff153c6349a65c469136d5a" prot="public" virt="non-virtual"><scope>diffuse</scope><name>albedo</name></member>
+      <member refid="classdiffuse_1a35de250e9e0a1a5ef292627f49c902e8" prot="public" virt="non-virtual"><scope>diffuse</scope><name>diffuse</name></member>
+      <member refid="classdiffuse_1a4876bba63de5563e0c4b6460224e4bb1" prot="public" virt="virtual"><scope>diffuse</scope><name>scatter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

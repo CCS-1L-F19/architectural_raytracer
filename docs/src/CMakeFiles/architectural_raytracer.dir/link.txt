@@ -1,0 +1,2 @@
+/usr/bin/ar qc libarchitectural_raytracer.a  CMakeFiles/architectural_raytracer.dir/bounding_box.cpp.o CMakeFiles/architectural_raytracer.dir/BVH.cpp.o CMakeFiles/architectural_raytracer.dir/camera.cpp.o CMakeFiles/architectural_raytracer.dir/material.cpp.o CMakeFiles/architectural_raytracer.dir/sphere.cpp.o CMakeFiles/architectural_raytracer.dir/triangle.cpp.o
+/usr/bin/ranlib libarchitectural_raytracer.a

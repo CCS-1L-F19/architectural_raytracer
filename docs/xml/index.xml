@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classbounding__box" kind="class"><name>bounding_box</name>
+    <member refid="classbounding__box_1ad73d9a860b3da08a814cfc1d38d26eed" kind="variable"><name>inside</name></member>
+    <member refid="classbounding__box_1a0a5d20a1e613f37efb0f2f5aeae24a82" kind="variable"><name>numobjects</name></member>
+    <member refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kind="variable"><name>bound1</name></member>
+    <member refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kind="variable"><name>bound2</name></member>
+    <member refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kind="function"><name>hit</name></member>
+    <member refid="classbounding__box_1a3d09525eb8ea353cf06e3c6b2ed7fa14" kind="function"><name>min_bound</name></member>
+    <member refid="classbounding__box_1a1df427cb2a119936314782fe7106ca16" kind="function"><name>max_bound</name></member>
+    <member refid="classbounding__box_1a96cc03ca301e8ee9d418c8af75f6daa6" kind="function"><name>volume</name></member>
+    <member refid="classbounding__box_1a65ad67dce99f3bea6db51e9e0a66f8bc" kind="function"><name>in_box</name></member>
+    <member refid="classbounding__box_1acafe0b4c981cd0b88bce5665eb95beae" kind="function"><name>bounding_box</name></member>
+    <member refid="classbounding__box_1ab92abf4b4ed8f2f870c93b4ddb4be356" kind="function"><name>bounding_box</name></member>
+    <member refid="classbounding__box_1a894d1a3fb2f2891327c280ef4ca0c71f" kind="function"><name>bounding_box</name></member>
+  </compound>
+  <compound refid="classBVH" kind="class"><name>BVH</name>
+    <member refid="classBVH_1a1dc5949b8bfd011e7aa31644a3ccff1c" kind="variable"><name>root</name></member>
+    <member refid="classBVH_1a1b7c1ef012cd3ff510ec062dde2aa3e3" kind="variable"><name>numobjects</name></member>
+    <member refid="classBVH_1a79e0ebc1aeb93f2cb48c8d625a0987ae" kind="variable"><name>objects</name></member>
+    <member refid="classBVH_1aa0760b0b7228793d38ea6ea30e6d3b27" kind="function"><name>BVH</name></member>
+    <member refid="classBVH_1ab7bec51470cf0ddd5fbbaf372b7274af" kind="function"><name>BVH</name></member>
+    <member refid="classBVH_1a7f87368f487a6d72df69a74028efe908" kind="function"><name>hit</name></member>
+    <member refid="classBVH_1af8e68c4a3e83f26e07b9ca37987eccd9" kind="function"><name>hit</name></member>
+    <member refid="classBVH_1a92746586a5885350d9419f2081f3a8d3" kind="function"><name>recursiveHit</name></member>
+  </compound>
+  <compound refid="classcamera" kind="class"><name>camera</name>
+    <member refid="classcamera_1a2f92acd972a066f66e23fe1bf2dd2103" kind="variable"><name>lower_left</name></member>
+    <member refid="classcamera_1a079a21af8444ce2fa7f324382de572cf" kind="variable"><name>width</name></member>
+    <member refid="classcamera_1a86f4f180a82dfe1547f5a68c40aaf40c" kind="variable"><name>height</name></member>
+    <member refid="classcamera_1a0e8ae66c9bc5ce2a29a5ca9e029d8273" kind="variable"><name>origin</name></member>
+    <member refid="classcamera_1a00668ef9694435ed11bd724db3d990d6" kind="variable"><name>vfov</name></member>
+    <member refid="classcamera_1ae5e04a9d27bbfa0a4d36494c181c2890" kind="variable"><name>aspect</name></member>
+    <member refid="classcamera_1a7c3ed00791d2ec6b83eb2a8f8eba0551" kind="variable"><name>half_height</name></member>
+    <member refid="classcamera_1a8652265a457b06b1c184e09b56fe8194" kind="variable"><name>half_width</name></member>
+    <member refid="classcamera_1a6bbc5464ba7372a1fa783ba3c6719979" kind="variable"><name>theta</name></member>
+    <member refid="classcamera_1a584f8f5a7b7f0238a35115414e3d960a" kind="function"><name>camera</name></member>
+    <member refid="classcamera_1ac07475d14a514c600c799bc7dd2c0907" kind="function"><name>get_ray</name></member>
+  </compound>
+  <compound refid="classdielectric" kind="class"><name>dielectric</name>
+    <member refid="classdielectric_1af28805e4747ef627fdada16881ff4a06" kind="variable"><name>ref_idx</name></member>
+    <member refid="classdielectric_1a58c81c3083387525d4be1ea255bf6a51" kind="function"><name>dielectric</name></member>
+    <member refid="classdielectric_1abfac7c2499f64b0a5589bb3980c4e59f" kind="function"><name>scatter</name></member>
+  </compound>
+  <compound refid="classdiffuse" kind="class"><name>diffuse</name>
+    <member refid="classdiffuse_1afe88849d7ff153c6349a65c469136d5a" kind="variable"><name>albedo</name></member>
+    <member refid="classdiffuse_1a35de250e9e0a1a5ef292627f49c902e8" kind="function"><name>diffuse</name></member>
+    <member refid="classdiffuse_1a4876bba63de5563e0c4b6460224e4bb1" kind="function"><name>scatter</name></member>
+  </compound>
+  <compound refid="structhit__record" kind="struct"><name>hit_record</name>
+    <member refid="structhit__record_1a7f01fe93ab07f09e943f772c8f4d86b4" kind="variable"><name>t</name></member>
+    <member refid="structhit__record_1af0d915768e7418302348430cb788836b" kind="variable"><name>p</name></member>
+    <member refid="structhit__record_1a13e119913532f25f57679403759bccfa" kind="variable"><name>normal</name></member>
+    <member refid="structhit__record_1a6578f1320cbf589873522f932f668a89" kind="variable"><name>mat_ptr</name></member>
+  </compound>
+  <compound refid="classhitable" kind="class"><name>hitable</name>
+    <member refid="classhitable_1aacc372725176a70749477e1a358d9609" kind="variable"><name>matptr</name></member>
+    <member refid="classhitable_1a266c04b5d3274c9e5eac7d2834bb1342" kind="function"><name>hit</name></member>
+    <member refid="classhitable_1ae7cfa0d0445eb013ebe646fb2e4d9877" kind="function"><name>min_bound</name></member>
+    <member refid="classhitable_1abd9db9596a4f5bcb765b02ffb31de39c" kind="function"><name>max_bound</name></member>
+    <member refid="classhitable_1a02ab6294341e1928ca3d78fca62d0748" kind="function"><name>in_box</name></member>
+  </compound>
+  <compound refid="classhitable__list" kind="class"><name>hitable_list</name>
+    <member refid="classhitable__list_1a79ba2224e3e31303544a201d86a7c8e1" kind="variable"><name>list</name></member>
+    <member refid="classhitable__list_1a259f330cc386189851e00041458fefd1" kind="variable"><name>size</name></member>
+    <member refid="classhitable__list_1a98090d257c3f78f9d527b3e362c84bbb" kind="function"><name>hitable_list</name></member>
+    <member refid="classhitable__list_1a0c1dab103dda041579706e24a7f78231" kind="function"><name>hitable_list</name></member>
+    <member refid="classhitable__list_1ac265dba85d1015b107c373afcfb461bc" kind="function"><name>hitable_list</name></member>
+    <member refid="classhitable__list_1ae82f658aabc8bab40c82414f482818d8" kind="function"><name>hit</name></member>
+  </compound>
+  <compound refid="classmaterial" kind="class"><name>material</name>
+    <member refid="classmaterial_1a2da9f6f33e921d48b7b6e753fbe68cc7" kind="function"><name>scatter</name></member>
+  </compound>
+  <compound refid="classmetal" kind="class"><name>metal</name>
+    <member refid="classmetal_1a7c16624a6f180f58c3bda5558c71e7c1" kind="variable"><name>albedo</name></member>
+    <member refid="classmetal_1a7b1a155f70bf086fc84c4c17d1e6f88c" kind="variable"><name>fuzz</name></member>
+    <member refid="classmetal_1af79883340e12b0c5db5afe23f5383942" kind="function"><name>metal</name></member>
+    <member refid="classmetal_1a10a5e6a8335687f98b58ea59cac5b694" kind="function"><name>scatter</name></member>
+  </compound>
+  <compound refid="structNode" kind="struct"><name>Node</name>
+    <member refid="structNode_1ab8c667ac8fdb120ed4c031682a9cdaee" kind="variable"><name>left</name></member>
+    <member refid="structNode_1a7328862eaa6dea28018326549b3294d3" kind="variable"><name>right</name></member>
+    <member refid="structNode_1a042a2ed715392b0279b12947310493ec" kind="variable"><name>axis</name></member>
+    <member refid="structNode_1aed4c4a2caff0c37dacb07c65dec95ccd" kind="variable"><name>b</name></member>
+    <member refid="structNode_1ad7a34779cad45d997bfd6d3d8043c75f" kind="function"><name>Node</name></member>
+  </compound>
+  <compound refid="classray" kind="class"><name>ray</name>
+    <member refid="classray_1ae36c071d6adc764d443c9a0c630e08c0" kind="variable"><name>a</name></member>
+    <member refid="classray_1a97e010eddb1ad0c41c054de30a980719" kind="variable"><name>b</name></member>
+    <member refid="classray_1a6a81906c090ceff40ac9a288639f4861" kind="function"><name>ray</name></member>
+    <member refid="classray_1a6f7e85ce93eceba80008f45b625369fc" kind="function"><name>ray</name></member>
+    <member refid="classray_1a9a70fc19772871d9da033948c2c608ba" kind="function"><name>origin</name></member>
+    <member refid="classray_1a1cca7288646b1f534f7a191fa16a8dc6" kind="function"><name>dir</name></member>
+    <member refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kind="function"><name>point_at_t</name></member>
+  </compound>
+  <compound refid="classsphere" kind="class"><name>sphere</name>
+    <member refid="classsphere_1a627be5e72c760037f7e976a00e14192c" kind="variable"><name>center</name></member>
+    <member refid="classsphere_1a9bad2d7ecf6f75cc998b893248fff8a2" kind="variable"><name>radius</name></member>
+    <member refid="classsphere_1ad809cfec9959267cd6c60055c3512685" kind="function"><name>sphere</name></member>
+    <member refid="classsphere_1a4a9dc98ff4d9ea93d7fa0bc1a8e872fb" kind="function"><name>sphere</name></member>
+    <member refid="classsphere_1a51d4c96bcacbbb4bd11083ce2d6e101e" kind="function"><name>min_bound</name></member>
+    <member refid="classsphere_1adb18340a7be789ee0e8ab2a6342684fe" kind="function"><name>max_bound</name></member>
+    <member refid="classsphere_1a35269706d92c22a6560d038ad2cb0192" kind="function"><name>hit</name></member>
+    <member refid="classsphere_1a92ec275047fef95f50265a418b55ac66" kind="function"><name>in_box</name></member>
+  </compound>
+  <compound refid="classtriangle" kind="class"><name>triangle</name>
+    <member refid="classtriangle_1a4267b8eadc087f60f67e1681e1891216" kind="variable"><name>p1</name></member>
+    <member refid="classtriangle_1aaac41c4b79a5cb6c54a945d1bdaf0fe4" kind="variable"><name>p2</name></member>
+    <member refid="classtriangle_1a528a59a6e5519ea9a5835d458fb19dc1" kind="variable"><name>p3</name></member>
+    <member refid="classtriangle_1ac0103b1d5b30325a6b785b50bd9eba8a" kind="variable"><name>normal</name></member>
+    <member refid="classtriangle_1ad7c01593b389e593f371e2b3011b96a5" kind="variable"><name>negnormal</name></member>
+    <member refid="classtriangle_1a59813fc729a711859e0df36028d2d2d6" kind="function"><name>overlap</name></member>
+    <member refid="classtriangle_1ac176bae9dc8cd99ca393c9f360760387" kind="function"><name>triangle</name></member>
+    <member refid="classtriangle_1afe8b844c6cbb2a851ed3d611069446fd" kind="function"><name>triangle</name></member>
+    <member refid="classtriangle_1a3c3df992e857457a9ac360f858180b1e" kind="function"><name>triangle</name></member>
+    <member refid="classtriangle_1a1922fe413161f745db0abf7b5f5a5a3d" kind="function"><name>~triangle</name></member>
+    <member refid="classtriangle_1ac18d5da9f057e8531cc24c2c800d5042" kind="function"><name>min_bound</name></member>
+    <member refid="classtriangle_1a956f30e917b4f1b0fac36044a566b57f" kind="function"><name>max_bound</name></member>
+    <member refid="classtriangle_1a47af01f4325462cc2a86bd4dcb61d8cf" kind="function"><name>hit</name></member>
+    <member refid="classtriangle_1acc11a7da8ab72f36669b5c3f1094925b" kind="function"><name>in_box</name></member>
+  </compound>
+  <compound refid="namespaceglm" kind="namespace"><name>glm</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="bounding__box_8cpp" kind="file"><name>bounding_box.cpp</name>
+  </compound>
+  <compound refid="bounding__box_8h" kind="file"><name>bounding_box.h</name>
+  </compound>
+  <compound refid="BVH_8cpp" kind="file"><name>BVH.cpp</name>
+    <member refid="BVH_8cpp_1a553373440c78164c0a2126894d07527e" kind="function"><name>makeTree</name></member>
+  </compound>
+  <compound refid="BVH_8h" kind="file"><name>BVH.h</name>
+  </compound>
+  <compound refid="camera_8cpp" kind="file"><name>camera.cpp</name>
+  </compound>
+  <compound refid="camera_8h" kind="file"><name>camera.h</name>
+  </compound>
+  <compound refid="hitable_8h" kind="file"><name>hitable.h</name>
+  </compound>
+  <compound refid="hitable__list_8h" kind="file"><name>hitable_list.h</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a5a538a8538e80be6a7558ae285727c39" kind="variable"><name>g_seed</name></member>
+    <member refid="main_8cpp_1a08a023655e4ec5bf25f742fb857dfbda" kind="variable"><name>boundedRays</name></member>
+    <member refid="main_8cpp_1a8caee38dd990c5a1d30deeae7cdc5a37" kind="function"><name>fast_srand</name></member>
+    <member refid="main_8cpp_1aaa736d1481652daab2871fd675a7b09a" kind="function"><name>fastrand</name></member>
+    <member refid="main_8cpp_1af11ed8bf3f3c58d9964234283ec50321" kind="function"><name>ran</name></member>
+    <member refid="main_8cpp_1a5c7956dd761a8cd516607ec0869c5146" kind="function"><name>random_in_sphere</name></member>
+    <member refid="main_8cpp_1a0b13df71030536ee8ea6e02f6278bea2" kind="function"><name>consv3</name></member>
+    <member refid="main_8cpp_1aeecc461941187060ec141992bf18bf6a" kind="function"><name>read_stl</name></member>
+    <member refid="main_8cpp_1a1e9e7d0365bc60e9da797b04777b0bc8" kind="function"><name>random_scene</name></member>
+    <member refid="main_8cpp_1a1d64fc3a004af51e2e6b2b1a906f348e" kind="function"><name>blend</name></member>
+    <member refid="main_8cpp_1acab820e45682cb2b906e71318c90446e" kind="function"><name>usage</name></member>
+    <member refid="main_8cpp_1ae2fcce1efddff9a0a91ce20b0f703951" kind="function"><name>safe_int</name></member>
+    <member refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="material_8cpp" kind="file"><name>material.cpp</name>
+    <member refid="material_8cpp_1a5c7956dd761a8cd516607ec0869c5146" kind="function"><name>random_in_sphere</name></member>
+    <member refid="material_8cpp_1a3ebe7935145018433e2fb6311820627d" kind="function"><name>schlick</name></member>
+    <member refid="material_8cpp_1a28d86c4ac54f3b13296ef712c898f5d5" kind="function"><name>refract</name></member>
+    <member refid="material_8cpp_1a25997d9bc8a3a0187abd63f590efe4dd" kind="function"><name>reflect</name></member>
+  </compound>
+  <compound refid="material_8h" kind="file"><name>material.h</name>
+  </compound>
+  <compound refid="ray_8h" kind="file"><name>ray.h</name>
+  </compound>
+  <compound refid="sphere_8cpp" kind="file"><name>sphere.cpp</name>
+  </compound>
+  <compound refid="sphere_8h" kind="file"><name>sphere.h</name>
+  </compound>
+  <compound refid="triangle_8cpp" kind="file"><name>triangle.cpp</name>
+    <member refid="triangle_8cpp_1ac24bbd9fbbebac84b12fbf1923c39afc" kind="function"><name>sameSign</name></member>
+  </compound>
+  <compound refid="triangle_8h" kind="file"><name>triangle.h</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src</name>
+  </compound>
+</doxygenindex>

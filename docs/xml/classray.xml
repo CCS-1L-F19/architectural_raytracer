@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classray" kind="class" language="C++" prot="public">
+    <compoundname>ray</compoundname>
+    <includes refid="ray_8h" local="no">ray.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classray_1ae36c071d6adc764d443c9a0c630e08c0" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 ray::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="12" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classray_1a97e010eddb1ad0c41c054de30a980719" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 ray::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="13" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classray_1a6a81906c090ceff40ac9a288639f4861" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ray::ray</definition>
+        <argsstring>()</argsstring>
+        <name>ray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="15" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classray_1a6f7e85ce93eceba80008f45b625369fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ray::ray</definition>
+        <argsstring>(const vec3 &amp;A, const vec3 &amp;B)</argsstring>
+        <name>ray</name>
+        <param>
+          <type>const vec3 &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const vec3 &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classray_1a9a70fc19772871d9da033948c2c608ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec3</type>
+        <definition>vec3 ray::origin</definition>
+        <argsstring>()</argsstring>
+        <name>origin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="18" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classray_1a1cca7288646b1f534f7a191fa16a8dc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec3</type>
+        <definition>vec3 ray::dir</definition>
+        <argsstring>()</argsstring>
+        <name>dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="19" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classray_1a8937338e8d3b45dd503e1e825a57ffe0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vec3</type>
+        <definition>vec3 ray::point_at_t</definition>
+        <argsstring>(float t)</argsstring>
+        <name>point_at_t</name>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>give us vector that points at a certain &apos;time&apos; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="21" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Ray! We like shooting these out. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" line="9" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/ray.h" bodystart="9" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classray_1ae36c071d6adc764d443c9a0c630e08c0" prot="public" virt="non-virtual"><scope>ray</scope><name>a</name></member>
+      <member refid="classray_1a97e010eddb1ad0c41c054de30a980719" prot="public" virt="non-virtual"><scope>ray</scope><name>b</name></member>
+      <member refid="classray_1a1cca7288646b1f534f7a191fa16a8dc6" prot="public" virt="non-virtual"><scope>ray</scope><name>dir</name></member>
+      <member refid="classray_1a9a70fc19772871d9da033948c2c608ba" prot="public" virt="non-virtual"><scope>ray</scope><name>origin</name></member>
+      <member refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" prot="public" virt="non-virtual"><scope>ray</scope><name>point_at_t</name></member>
+      <member refid="classray_1a6a81906c090ceff40ac9a288639f4861" prot="public" virt="non-virtual"><scope>ray</scope><name>ray</name></member>
+      <member refid="classray_1a6f7e85ce93eceba80008f45b625369fc" prot="public" virt="non-virtual"><scope>ray</scope><name>ray</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

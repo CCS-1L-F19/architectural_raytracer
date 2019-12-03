@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structNode" kind="struct" language="C++" prot="public">
+    <compoundname>Node</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structNode_1ab8c667ac8fdb120ed4c031682a9cdaee" prot="public" static="no" mutable="no">
+        <type><ref refid="structNode" kindref="compound">Node</ref> *</type>
+        <definition>Node* Node::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="11" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNode_1a7328862eaa6dea28018326549b3294d3" prot="public" static="no" mutable="no">
+        <type><ref refid="structNode" kindref="compound">Node</ref> *</type>
+        <definition>Node* Node::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="12" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNode_1a042a2ed715392b0279b12947310493ec" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Node::axis</definition>
+        <argsstring></argsstring>
+        <name>axis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="13" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNode_1aed4c4a2caff0c37dacb07c65dec95ccd" prot="public" static="no" mutable="no">
+        <type><ref refid="classbounding__box" kindref="compound">bounding_box</ref></type>
+        <definition>bounding_box Node::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="15" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structNode_1ad7a34779cad45d997bfd6d3d8043c75f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Node::Node</definition>
+        <argsstring>()</argsstring>
+        <name>Node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="37">
+        <label>bounding_box</label>
+        <link refid="classbounding__box"/>
+      </node>
+      <node id="36">
+        <label>Node</label>
+        <link refid="structNode"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="10" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structNode_1a042a2ed715392b0279b12947310493ec" prot="public" virt="non-virtual"><scope>Node</scope><name>axis</name></member>
+      <member refid="structNode_1aed4c4a2caff0c37dacb07c65dec95ccd" prot="public" virt="non-virtual"><scope>Node</scope><name>b</name></member>
+      <member refid="structNode_1ab8c667ac8fdb120ed4c031682a9cdaee" prot="public" virt="non-virtual"><scope>Node</scope><name>left</name></member>
+      <member refid="structNode_1ad7a34779cad45d997bfd6d3d8043c75f" prot="public" virt="non-virtual"><scope>Node</scope><name>Node</name></member>
+      <member refid="structNode_1a7328862eaa6dea28018326549b3294d3" prot="public" virt="non-virtual"><scope>Node</scope><name>right</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classhitable__list" kind="class" language="C++" prot="public">
+    <compoundname>hitable_list</compoundname>
+    <includes refid="hitable__list_8h" local="no">hitable_list.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classhitable__list_1a79ba2224e3e31303544a201d86a7c8e1" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classhitable" kindref="compound">hitable</ref> * &gt;</type>
+        <definition>std::vector&lt;hitable*&gt; hitable_list::list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="12" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhitable__list_1a259f330cc386189851e00041458fefd1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int hitable_list::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="13" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhitable__list_1a98090d257c3f78f9d527b3e362c84bbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>hitable_list::hitable_list</definition>
+        <argsstring>()</argsstring>
+        <name>hitable_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="14" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classhitable__list_1a0c1dab103dda041579706e24a7f78231" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>hitable_list::hitable_list</definition>
+        <argsstring>(std::vector&lt; hitable *&gt; &amp;l)</argsstring>
+        <name>hitable_list</name>
+        <param>
+          <type>std::vector&lt; <ref refid="classhitable" kindref="compound">hitable</ref> *&gt; &amp;</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="15" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classhitable__list_1ac265dba85d1015b107c373afcfb461bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>hitable_list::hitable_list</definition>
+        <argsstring>(std::set&lt; hitable *&gt; l)</argsstring>
+        <name>hitable_list</name>
+        <param>
+          <type>std::set&lt; <ref refid="classhitable" kindref="compound">hitable</ref> *&gt;</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classhitable__list_1ae82f658aabc8bab40c82414f482818d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool hitable_list::hit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max, hit_record &amp;rec) const</argsstring>
+        <name>hit</name>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <briefdescription>
+<para>determines which hit was closest to the camera, which is which hit we should write to the screen </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="18" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="21" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>container for list of hitables </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" line="10" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable_list.h" bodystart="10" bodyend="19"/>
+    <listofallmembers>
+      <member refid="classhitable__list_1ae82f658aabc8bab40c82414f482818d8" prot="public" virt="virtual"><scope>hitable_list</scope><name>hit</name></member>
+      <member refid="classhitable__list_1a98090d257c3f78f9d527b3e362c84bbb" prot="public" virt="non-virtual"><scope>hitable_list</scope><name>hitable_list</name></member>
+      <member refid="classhitable__list_1a0c1dab103dda041579706e24a7f78231" prot="public" virt="non-virtual"><scope>hitable_list</scope><name>hitable_list</name></member>
+      <member refid="classhitable__list_1ac265dba85d1015b107c373afcfb461bc" prot="public" virt="non-virtual"><scope>hitable_list</scope><name>hitable_list</name></member>
+      <member refid="classhitable__list_1a79ba2224e3e31303544a201d86a7c8e1" prot="public" virt="non-virtual"><scope>hitable_list</scope><name>list</name></member>
+      <member refid="classhitable__list_1a259f330cc386189851e00041458fefd1" prot="public" virt="non-virtual"><scope>hitable_list</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

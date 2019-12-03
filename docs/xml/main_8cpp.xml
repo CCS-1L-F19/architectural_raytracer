@@ -1,0 +1,1153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <includes local="no">math.h</includes>
+    <includes refid="hitable_8h" local="yes">hitable.h</includes>
+    <includes refid="camera_8h" local="yes">camera.h</includes>
+    <includes refid="sphere_8h" local="yes">sphere.h</includes>
+    <includes local="no">cstdlib</includes>
+    <includes refid="hitable__list_8h" local="yes">hitable_list.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes local="yes">glm/gtx/norm.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/geometric.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/quaternion.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/glm.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/constants.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/scalar_constants.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/setup.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/scalar_constants.inl</includes>
+    <includes local="no">limits</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/constants.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/quaternion.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/matrix_transform.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_projection.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/trigonometric.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/matrix.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_projection.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_clip_space.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_clip_space.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_transform.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_transform.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/matrix_transform.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_relational.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/qualifier.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_relational.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vector_relational.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/common.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_float.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_common.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_geometric.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/exponential.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_geometric.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_common.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_float.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_quat.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_relational.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_relational.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_quat.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_float_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_double.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_double_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_trigonometric.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_trigonometric.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_transform.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_transform.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/quaternion.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/epsilon.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/epsilon.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_exponential.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_exponential.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/norm.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/quaternion.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/component_wise.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/component_wise.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/norm.inl</includes>
+    <includes refid="BVH_8h" local="yes">BVH.h</includes>
+    <includes refid="triangle_8h" local="yes">triangle.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">set</includes>
+    <includes local="no">string</includes>
+    <incdepgraph>
+      <node id="204">
+        <label>camera.h</label>
+        <link refid="camera_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="212">
+        <label>glm/gtx/norm.hpp</label>
+      </node>
+      <node id="264">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/quaternion.inl</label>
+      </node>
+      <node id="205">
+        <label>sphere.h</label>
+        <link refid="sphere_8h_source"/>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+      </node>
+      <node id="243">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_common.hpp</label>
+      </node>
+      <node id="220">
+        <label>limits</label>
+      </node>
+      <node id="239">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_relational.inl</label>
+      </node>
+      <node id="208">
+        <label>hitable_list.h</label>
+        <link refid="hitable__list_8h_source"/>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+      </node>
+      <node id="273">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/norm.inl</label>
+      </node>
+      <node id="255">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_relational.inl</label>
+      </node>
+      <node id="260">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_trigonometric.hpp</label>
+      </node>
+      <node id="253">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec4.hpp</label>
+      </node>
+      <node id="213">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/geometric.hpp</label>
+      </node>
+      <node id="232">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_clip_space.hpp</label>
+      </node>
+      <node id="271">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/component_wise.hpp</label>
+      </node>
+      <node id="276">
+        <label>triangle.h</label>
+        <link refid="triangle_8h_source"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+      <node id="268">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_exponential.inl</label>
+      </node>
+      <node id="259">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_double_precision.hpp</label>
+      </node>
+      <node id="203">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+      <node id="241">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/common.hpp</label>
+      </node>
+      <node id="265">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/epsilon.hpp</label>
+      </node>
+      <node id="252">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec3.hpp</label>
+      </node>
+      <node id="257">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_float_precision.hpp</label>
+      </node>
+      <node id="277">
+        <label>string</label>
+      </node>
+      <node id="228">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_projection.hpp</label>
+      </node>
+      <node id="216">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/constants.hpp</label>
+      </node>
+      <node id="275">
+        <label>bounding_box.h</label>
+        <link refid="bounding__box_8h_source"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+      </node>
+      <node id="247">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_common.inl</label>
+      </node>
+      <node id="215">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/glm.hpp</label>
+      </node>
+      <node id="262">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_transform.hpp</label>
+      </node>
+      <node id="261">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_trigonometric.inl</label>
+      </node>
+      <node id="230">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/matrix.hpp</label>
+      </node>
+      <node id="258">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_double.hpp</label>
+      </node>
+      <node id="199">
+        <label>fstream</label>
+      </node>
+      <node id="240">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vector_relational.hpp</label>
+      </node>
+      <node id="234">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_transform.hpp</label>
+      </node>
+      <node id="242">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_float.hpp</label>
+      </node>
+      <node id="233">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_clip_space.inl</label>
+      </node>
+      <node id="272">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/component_wise.inl</label>
+      </node>
+      <node id="244">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_geometric.hpp</label>
+      </node>
+      <node id="231">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_projection.inl</label>
+      </node>
+      <node id="218">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/setup.hpp</label>
+      </node>
+      <node id="197">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="228" relation="include">
+        </childnode>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="232" relation="include">
+        </childnode>
+        <childnode refid="233" relation="include">
+        </childnode>
+        <childnode refid="234" relation="include">
+        </childnode>
+        <childnode refid="235" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="237" relation="include">
+        </childnode>
+        <childnode refid="238" relation="include">
+        </childnode>
+        <childnode refid="239" relation="include">
+        </childnode>
+        <childnode refid="240" relation="include">
+        </childnode>
+        <childnode refid="241" relation="include">
+        </childnode>
+        <childnode refid="242" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="244" relation="include">
+        </childnode>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="264" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+      </node>
+      <node id="251">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x4.hpp</label>
+      </node>
+      <node id="274">
+        <label>BVH.h</label>
+        <link refid="BVH_8h_source"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+      </node>
+      <node id="266">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/epsilon.inl</label>
+      </node>
+      <node id="229">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/trigonometric.hpp</label>
+      </node>
+      <node id="209">
+        <label>vector</label>
+      </node>
+      <node id="221">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/constants.inl</label>
+      </node>
+      <node id="214">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/quaternion.hpp</label>
+      </node>
+      <node id="249">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_quat.hpp</label>
+      </node>
+      <node id="227">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec4.hpp</label>
+      </node>
+      <node id="263">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_transform.inl</label>
+      </node>
+      <node id="224">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x4.hpp</label>
+      </node>
+      <node id="235">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_transform.inl</label>
+      </node>
+      <node id="217">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/scalar_constants.hpp</label>
+      </node>
+      <node id="226">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec3.hpp</label>
+      </node>
+      <node id="223">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/matrix_transform.hpp</label>
+      </node>
+      <node id="211">
+        <label>time.h</label>
+      </node>
+      <node id="202">
+        <label>math.h</label>
+      </node>
+      <node id="225">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec2.hpp</label>
+      </node>
+      <node id="207">
+        <label>cstdlib</label>
+      </node>
+      <node id="246">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_geometric.inl</label>
+      </node>
+      <node id="245">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/exponential.hpp</label>
+      </node>
+      <node id="222">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/quaternion.hpp</label>
+      </node>
+      <node id="198">
+        <label>iostream</label>
+      </node>
+      <node id="200">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+      </node>
+      <node id="238">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/qualifier.hpp</label>
+      </node>
+      <node id="269">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/norm.hpp</label>
+      </node>
+      <node id="254">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_relational.hpp</label>
+      </node>
+      <node id="237">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_relational.hpp</label>
+      </node>
+      <node id="210">
+        <label>set</label>
+      </node>
+      <node id="270">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtx/quaternion.inl</label>
+      </node>
+      <node id="236">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/gtc/matrix_transform.inl</label>
+      </node>
+      <node id="267">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_exponential.hpp</label>
+      </node>
+      <node id="248">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/quaternion_float.hpp</label>
+      </node>
+      <node id="256">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_quat.inl</label>
+      </node>
+      <node id="219">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/scalar_constants.inl</label>
+      </node>
+      <node id="206">
+        <label>material.h</label>
+        <link refid="material_8h_source"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+      </node>
+      <node id="250">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x3.hpp</label>
+      </node>
+      <node id="201">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceglm">glm</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cpp_1a5a538a8538e80be6a7558ae285727c39" prot="public" static="yes" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int g_seed</definition>
+        <argsstring></argsstring>
+        <name>g_seed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="27" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a08a023655e4ec5bf25f742fb857dfbda" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int boundedRays</definition>
+        <argsstring></argsstring>
+        <name>boundedRays</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="203" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1a8caee38dd990c5a1d30deeae7cdc5a37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void fast_srand</definition>
+        <argsstring>(int seed)</argsstring>
+        <name>fast_srand</name>
+        <param>
+          <type>int</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="29" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1aaa736d1481652daab2871fd675a7b09a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int fastrand</definition>
+        <argsstring>()</argsstring>
+        <name>fastrand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="34" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1af11ed8bf3f3c58d9964234283ec50321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float ran</definition>
+        <argsstring>()</argsstring>
+        <name>ran</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="40" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a5c7956dd761a8cd516607ec0869c5146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vec3</type>
+        <definition>vec3 random_in_sphere</definition>
+        <argsstring>()</argsstring>
+        <name>random_in_sphere</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="45" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="45" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a0b13df71030536ee8ea6e02f6278bea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void consv3</definition>
+        <argsstring>(vec3 &amp;v, char *facet)</argsstring>
+        <name>consv3</name>
+        <param>
+          <type>vec3 &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>facet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="57" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="57" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1aeecc461941187060ec141992bf18bf6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void read_stl</definition>
+        <argsstring>(string fname, vector&lt; hitable *&gt; &amp;v)</argsstring>
+        <name>read_stl</name>
+        <param>
+          <type>string</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classhitable" kindref="compound">hitable</ref> *&gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>!</para><para>! </para>        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="76" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="76" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a1e9e7d0365bc60e9da797b04777b0bc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classhitable" kindref="compound">hitable</ref> * &gt;</type>
+        <definition>std::vector&lt;hitable *&gt; random_scene</definition>
+        <argsstring>()</argsstring>
+        <name>random_scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="154" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="154" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a1d64fc3a004af51e2e6b2b1a906f348e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vec3</type>
+        <definition>vec3 blend</definition>
+        <argsstring>(ray &amp;r, int bounces, BVH &amp;world)</argsstring>
+        <name>blend</name>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bounces</declname>
+        </param>
+        <param>
+          <type><ref refid="classBVH" kindref="compound">BVH</ref> &amp;</type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="205" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="205" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1acab820e45682cb2b906e71318c90446e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void usage</definition>
+        <argsstring>(char *argv[])</argsstring>
+        <name>usage</name>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="243" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="243" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1ae2fcce1efddff9a0a91ce20b0f703951" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int safe_int</definition>
+        <argsstring>(const char *const varName, char *arg, char *argv[])</argsstring>
+        <name>safe_int</name>
+        <param>
+          <type>const char *const</type>
+          <declname>varName</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>arg</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="250" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="250" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" line="262" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp" bodystart="262" bodyend="363"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hitable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;camera.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sphere.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hitable_list.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/gtx/norm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BVH.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;triangle.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceglm" kindref="compound">glm</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::endl;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cerr;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>g_seed;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fast_srand(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>g_seed<sp/>=<sp/>seed;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fastrand()</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>g_seed<sp/>=<sp/>(214013<sp/>*<sp/>g_seed<sp/>+<sp/>2531011);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(g_seed<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0x7FFF;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ran()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.999f<sp/>*<sp/>float(rand())<sp/>/<sp/>RAND_MAX;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">vec3<sp/>random_in_sphere()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>v;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/>=<sp/>vec3(ran(),<sp/>ran(),<sp/>ran());</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/>-=<sp/>0.5f;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(length2(v)<sp/>&gt;=<sp/>1);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>consv3(vec3&amp;<sp/>v,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>facet)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>f1[4]<sp/>=<sp/>{facet[0],</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>facet[1],facet[2],facet[3]};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>f2[4]<sp/>=<sp/>{facet[4],</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>facet[5],facet[6],facet[7]};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>f3[4]<sp/>=<sp/>{facet[8],</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>facet[9],facet[10],facet[11]};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>v.x<sp/>=<sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)<sp/>f1<sp/>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>v.y<sp/>=<sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)<sp/>f2<sp/>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>v.z<sp/>=<sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)<sp/>f3<sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>read_stl(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname,<sp/>vector<sp/>&lt;hitable*&gt;&amp;v){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//don&apos;t<sp/>forget<sp/>ios::binary</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>myFile<sp/>(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fname.c_str(),<sp/>ios::in<sp/>|<sp/>ios::binary);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>header_info[80]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>nTri[4];</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nTriLong;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//read<sp/>80<sp/>byte<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myFile)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>myFile.read<sp/>(header_info,<sp/>80);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;header:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>header_info<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//read<sp/>4-byte<sp/>ulong</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myFile)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>myFile.read<sp/>(nTri,<sp/>4);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nTriLong<sp/>=<sp/>*((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">*)nTri)<sp/>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;n<sp/>Tri:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>nTriLong<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//now<sp/>read<sp/>in<sp/>all<sp/>the<sp/>triangles</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>90000;<sp/>i++){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>facet[50];</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myFile)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//read<sp/>one<sp/>50-byte<sp/>triangle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>myFile.read<sp/>(facet,<sp/>50);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//populate<sp/>each<sp/>point<sp/>of<sp/>the<sp/>triangle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//using<sp/>v3::v3(char*<sp/>bin);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//facet<sp/>+<sp/>12<sp/>skips<sp/>the<sp/>triangle&apos;s<sp/>unit<sp/>normal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec3<sp/>p1,p2,p3,normal;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>consv3(normal,facet);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>normal.y;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normal.y<sp/>=<sp/>normal.z;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>normal.z<sp/>=<sp/>-1.0f<sp/>*<sp/>tmp;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>consv3(p1,facet+12);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>p1.y;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p1.y<sp/>=<sp/>p1.z;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p1.z<sp/>=<sp/>-1.0f<sp/>*<sp/>tmp;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>consv3(p2,facet+24);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>p2.y;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p2.y<sp/>=<sp/>p2.z;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p2.z<sp/>=<sp/>-1.0f<sp/>*<sp/>tmp;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>consv3(p3,facet+36);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>p3.y;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p3.y<sp/>=<sp/>p3.z;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p3.z<sp/>=<sp/>-1.0f<sp/>*<sp/>tmp;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout<sp/>&lt;&lt;<sp/>&quot;p1:<sp/>&quot;<sp/>&lt;&lt;<sp/>p1.x<sp/>&lt;&lt;<sp/>&quot;,&quot;<sp/>&lt;&lt;<sp/>p1.y<sp/>&lt;&lt;<sp/>&quot;,&quot;<sp/>&lt;&lt;<sp/>p1.z<sp/>&lt;&lt;<sp/>endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//add<sp/>a<sp/>new<sp/>triangle<sp/>to<sp/>the<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.push_back(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classtriangle" kindref="compound">triangle</ref>(p1,p2,p3,</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmetal" kindref="compound">metal</ref>(vec3(0.1,0.8,0.1),0.1f)));</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//add<sp/>sphere</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vec3<sp/>avg<sp/>=<sp/>(p1+p2+p3)/3.0f;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//v.push_back(new<sp/>sphere(avg,0.5f,new<sp/>metal(vec3(0.9,0.1,0.1),0.1f)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">std::vector&lt;hitable<sp/>*&gt;<sp/>random_scene()</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>500;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classhitable" kindref="compound">hitable</ref><sp/>**list<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classhitable" kindref="compound">hitable</ref><sp/>*[n];</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>-11;<sp/>a<sp/>&lt;<sp/>11;<sp/>a++)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>-11;<sp/>b<sp/>&lt;<sp/>11;<sp/>b++)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>choose_mat<sp/>=<sp/>drand48();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec3<sp/>center(a<sp/>+<sp/>0.9<sp/>*<sp/>drand48(),<sp/>0.2,<sp/>b<sp/>+<sp/>0.9<sp/>*<sp/>drand48());</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vec3<sp/>center(a,0.2,b);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((center<sp/>-<sp/>vec3(4,<sp/>0.2,<sp/>0)).length()<sp/>&gt;<sp/>0.9)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(choose_mat<sp/>&lt;<sp/>0.8)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">//<sp/>diffuse</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>center,<sp/>0.2,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classdiffuse" kindref="compound">diffuse</ref>(vec3(drand48()<sp/>*<sp/>drand48(),</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>drand48()<sp/>*<sp/>drand48(),</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>drand48()<sp/>*<sp/>drand48())));</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(choose_mat<sp/>&lt;<sp/>0.95)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">//<sp/>metal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>center,<sp/>0.2,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmetal" kindref="compound">metal</ref>(vec3(0.5<sp/>*<sp/>(1<sp/>+<sp/>drand48()),</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5<sp/>*<sp/>(1<sp/>+<sp/>drand48()),</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5<sp/>*<sp/>(1<sp/>+<sp/>drand48())),</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5<sp/>*<sp/>drand48()));</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="comment">//<sp/>glass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(center,<sp/>0.2,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classdielectric" kindref="compound">dielectric</ref>(1.5));</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(vec3(0,<sp/>1,<sp/>0),<sp/>-1.0,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classdielectric" kindref="compound">dielectric</ref>(1.5));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(vec3(-4,<sp/>1,<sp/>0),<sp/>1.0,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classdiffuse" kindref="compound">diffuse</ref>(vec3(1,<sp/>1,<sp/>0)));</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(vec3(4,<sp/>1,<sp/>0),<sp/>1.0,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmetal" kindref="compound">metal</ref>(vec3(0.4,<sp/>0.4,<sp/>0.8),<sp/>0.0));</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classtriangle" kindref="compound">triangle</ref>(vec3(-5,0,5),vec3(5,0,5),vec3(0,8,5),</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmetal" kindref="compound">metal</ref>(vec3(0.3,0.9,0.3),0.1f));</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>list[i++]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(vec3(0,<sp/>-1000,<sp/>0),<sp/>1000,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classdiffuse" kindref="compound">diffuse</ref>(vec3(0.5,<sp/>0.5,<sp/>0.5)));</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;hitable<sp/>*&gt;<sp/>v(list,<sp/>list<sp/>+<sp/>i);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boundedRays<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">vec3<sp/>blend(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;r,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bounces,<sp/><ref refid="classBVH" kindref="compound">BVH</ref><sp/>&amp;world)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hit;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structhit__record" kindref="compound">hit_record</ref><sp/>rec;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>rec.mat_ptr<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classhitable__list" kindref="compound">hitable_list</ref><sp/>obj<sp/>=<sp/><ref refid="classhitable__list" kindref="compound">hitable_list</ref>(world.hit(r,<sp/>0,<sp/>2.4e+30));</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>hit<sp/>=<sp/>obj.<ref refid="classhitable__list_1ae82f658aabc8bab40c82414f482818d8" kindref="member">hit</ref>(r,<sp/>0.0001,<sp/>2.4e+30,<sp/>rec);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bounces<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundedRays++;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//hit<sp/>=<sp/>world.hit(r,0,2.4e+30,rec);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hit)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classray" kindref="compound">ray</ref><sp/>scattered;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec3<sp/>attenuation;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bounces<sp/>&lt;<sp/>50<sp/>&amp;&amp;<sp/>rec.mat_ptr-&gt;scatter(r,<sp/>rec,<sp/>attenuation,<sp/>scattered))</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>attenuation<sp/>*<sp/>blend(scattered,<sp/>bounces<sp/>+<sp/>1,<sp/>world);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vec3(0,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//x<sp/>range:<sp/>-2<sp/>to<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//y<sp/>range:<sp/>-1<sp/>to<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>white<sp/>=<sp/>vec3(1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>blue<sp/>=<sp/>vec3(0.52,<sp/>0.808,<sp/>0.92);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>0.5f<sp/>*<sp/>(normalize(r.dir()).y<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t<sp/>*<sp/>(blue<sp/>-<sp/>white)<sp/>+<sp/>white;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>usage(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Usage:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>argv[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>r<sp/>x<sp/>y<sp/>z&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>where<sp/>r<sp/>is<sp/>rays<sp/>per<sp/>pixel&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>y<sp/>z<sp/>are<sp/>coordinates<sp/>of<sp/>camera&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>safe_int(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>varName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*arg,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::stoi(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">(arg));</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(std::exception<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>e)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>parsing<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>varName<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>usage(argv);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>!=<sp/>5)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>usage(argv);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>clock_t<sp/>begin_time<sp/>=<sp/>clock();</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>fast_srand(0);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>srand(time(NULL));</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>srand48(time(0));</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rays_per_pixel<sp/>=<sp/>safe_int(</highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">,<sp/>argv[1],<sp/>argv);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>safe_int(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>argv[2],<sp/>argv);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>safe_int(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>argv[3],<sp/>argv);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>z<sp/>=<sp/>safe_int(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>argv[4],<sp/>argv);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>origin<sp/>=<sp/>vec3(x,y,z);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scale<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width<sp/>=<sp/>192*scale;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height<sp/>=<sp/>108*scale;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>size<sp/>=<sp/>2;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//hitable*<sp/>worl[size];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//worl[0]<sp/>=<sp/>new<sp/>triangle(vec3(20,0,0),vec3(-20,0,0),vec3(0,40,0),new<sp/>diffuse(vec3(0.9,0.3,0.3)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//worl[size<sp/>-<sp/>1]<sp/>=<sp/>new<sp/>sphere(vec3(0,-100.5,-1),100.0f,new<sp/>diffuse(vec3(0.8,0.8,0)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::vector&lt;hitable<sp/>*&gt;<sp/>wor<sp/>=<sp/>random_scene();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;hitable*&gt;<sp/>worl;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>read_stl(</highlight><highlight class="stringliteral">&quot;bunny.stl&quot;</highlight><highlight class="normal">,worl);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Read<sp/>stl&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//worl.push_back(new<sp/>triangle(vec3(20,20,0),vec3(-20,20,0),vec3(0,40,0),new<sp/>diffuse(vec3(0.9,0.3,0.3))));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>worl.push_back(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(vec3(0,<sp/>-1000,<sp/>0),<sp/>990,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classdiffuse" kindref="compound">diffuse</ref>(vec3(0.5,<sp/>0.5,<sp/>0.5))));</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>worl.size()&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BVH<sp/>world<sp/>=<sp/>BVH(wor,<sp/>wor.size(),<sp/>vec3(-11,<sp/>-3,<sp/>-11),<sp/>vec3(11,<sp/>11,<sp/>11));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBVH" kindref="compound">BVH</ref><sp/>world<sp/>=<sp/><ref refid="classBVH" kindref="compound">BVH</ref>(worl,<sp/>worl.size(),<sp/>vec3(-60,<sp/>-3,<sp/>-60),<sp/>vec3(60,<sp/>150,<sp/>60));</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Tree<sp/>made&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//hitable_list<sp/>world<sp/>=<sp/>hitable_list(wor);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>lookat<sp/>=<sp/>vec3(0,8,0);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vec3<sp/>pixels[width*height];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcamera" kindref="compound">camera</ref><sp/>cam<sp/>=<sp/><ref refid="classcamera" kindref="compound">camera</ref>(origin,<sp/>lookat,<sp/>65,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">(width)<sp/>/<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">(height));</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>u,<sp/>v;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;hitable*&gt;<sp/>smolworld;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//hitable_list<sp/>smol;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>file;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>file.open(</highlight><highlight class="stringliteral">&quot;hell.ppm&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>file<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;P3\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>width<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>height<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n255\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>height<sp/>-<sp/>1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>width;<sp/>j++)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec3<sp/>col<sp/>=<sp/>vec3(0,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u<sp/>=<sp/>float(j)<sp/>/<sp/>float(width);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/>=<sp/>float(i)<sp/>/<sp/>float(height);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classray" kindref="compound">ray</ref><sp/>testRay<sp/>=<sp/>cam.<ref refid="classcamera_1ac07475d14a514c600c799bc7dd2c0907" kindref="member">get_ray</ref>(u,v);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smolworld<sp/>=<sp/>world.hit(testRay,0,2.4e+30);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(smolworld.size()<sp/>&gt;<sp/>1)cout<sp/>&lt;&lt;<sp/>smolworld.size()<sp/>&lt;&lt;<sp/>&quot;<sp/>objects<sp/>in<sp/>this<sp/>pixel:<sp/>(&quot;<sp/>&lt;&lt;height<sp/>-1<sp/>-i<sp/>&lt;&lt;&quot;,&quot;&lt;&lt;j&lt;&lt;&quot;)&quot;&lt;&lt;<sp/>endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s<sp/>=<sp/>0;<sp/>s<sp/>&lt;<sp/>rays_per_pixel;<sp/>s++)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u<sp/>=<sp/>float(j<sp/>+<sp/>ran())<sp/>/<sp/>float(width);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/>=<sp/>float(i<sp/>+<sp/>ran())<sp/>/<sp/>float(height);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classray" kindref="compound">ray</ref><sp/>r<sp/>=<sp/>cam.<ref refid="classcamera_1ac07475d14a514c600c799bc7dd2c0907" kindref="member">get_ray</ref>(u,<sp/>v);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col<sp/>=<sp/>col<sp/>+<sp/>blend(r,<sp/>1,<sp/>world);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col<sp/>/=<sp/>rays_per_pixel;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col.x<sp/>=<sp/>sqrt(col.x);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col.y<sp/>=<sp/>sqrt(col.y);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col.z<sp/>=<sp/>sqrt(col.z);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col<sp/>*=<sp/>255.99f;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/>&lt;&lt;<sp/>int(col.x)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>int(col.y)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>int(col.z)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if((height-1-i)+j<sp/>%<sp/>1000<sp/>==<sp/>0)cout<sp/>&lt;&lt;<sp/>(height-1-i)*width<sp/>+<sp/>j<sp/>&lt;&lt;<sp/>&quot;<sp/>pixels<sp/>done&quot;<sp/>&lt;&lt;<sp/>endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//pixels[(height-1<sp/>-i)*width<sp/>+<sp/>j]<sp/>=<sp/>vec3(int(col.x),int(col.y),int(col.z));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}cout<sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>lines<sp/>to<sp/>go&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="354"><highlight class="comment"><sp/><sp/><sp/><sp/>std::ofstream<sp/>file;</highlight></codeline>
+<codeline lineno="355"><highlight class="comment"><sp/><sp/><sp/><sp/>file.open(&quot;hell.ppm&quot;);</highlight></codeline>
+<codeline lineno="356"><highlight class="comment"><sp/><sp/><sp/><sp/>file<sp/>&lt;&lt;<sp/>&quot;P3\n&quot;<sp/>&lt;&lt;<sp/>width<sp/>&lt;&lt;<sp/>&quot;<sp/>&quot;&lt;&lt;<sp/>height<sp/>&lt;&lt;<sp/>&quot;\n255\n&quot;;</highlight></codeline>
+<codeline lineno="357"><highlight class="comment"><sp/><sp/><sp/><sp/>for(int<sp/>i<sp/>=0;i&lt;width*height;i++){</highlight></codeline>
+<codeline lineno="358"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/>&lt;&lt;<sp/>pixels[i].x<sp/>&lt;&lt;&quot;<sp/>&quot;&lt;&lt;<sp/>pixels[i].y<sp/>&lt;&lt;&quot;<sp/>&quot;&lt;&lt;<sp/>pixels[i].z<sp/>&lt;&lt;&quot;\n&quot;;</highlight></codeline>
+<codeline lineno="359"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="360"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Time<sp/>in<sp/>seconds:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>float(clock()<sp/>-<sp/>begin_time)<sp/>/<sp/>CLOCKS_PER_SEC<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Bounced<sp/>rays:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>boundedRays<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp"/>
+  </compounddef>
+</doxygen>

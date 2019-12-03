@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="sphere_8h" kind="file" language="C++">
+    <compoundname>sphere.h</compoundname>
+    <includes refid="hitable_8h" local="yes">hitable.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes refid="material_8h" local="yes">material.h</includes>
+    <includedby refid="main_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp</includedby>
+    <includedby refid="sphere_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.cpp</includedby>
+    <incdepgraph>
+      <node id="312">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h</label>
+        <link refid="sphere_8h"/>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="317" relation="include">
+        </childnode>
+      </node>
+      <node id="313">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="314" relation="include">
+        </childnode>
+      </node>
+      <node id="316">
+        <label>math.h</label>
+      </node>
+      <node id="314">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="315" relation="include">
+        </childnode>
+      </node>
+      <node id="317">
+        <label>material.h</label>
+        <link refid="material_8h_source"/>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classsphere" prot="public">sphere</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SPHEREH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SPHEREH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hitable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;material.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classsphere" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsphere" kindref="compound">sphere</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classhitable" kindref="compound">hitable</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>center;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radius;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(){};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsphere" kindref="compound">sphere</ref>(vec3<sp/>cen,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r,<ref refid="classmaterial" kindref="compound">material</ref>*<sp/>m);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="classsphere_1a51d4c96bcacbbb4bd11083ce2d6e101e" kindref="member">min_bound</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="classsphere_1adb18340a7be789ee0e8ab2a6342684fe" kindref="member">max_bound</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsphere_1a35269706d92c22a6560d038ad2cb0192" kindref="member">hit</ref>(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;<sp/>r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max,<ref refid="structhit__record" kindref="compound">hit_record</ref><sp/>&amp;<sp/>rec)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsphere_1a92ec275047fef95f50265a418b55ac66" kindref="member">in_box</ref>(vec3<sp/>min,vec3<sp/>max);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h"/>
+  </compounddef>
+</doxygen>

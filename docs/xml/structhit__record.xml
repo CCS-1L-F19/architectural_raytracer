@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structhit__record" kind="struct" language="C++" prot="public">
+    <compoundname>hit_record</compoundname>
+    <includes refid="hitable_8h" local="no">hitable.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structhit__record_1a7f01fe93ab07f09e943f772c8f4d86b4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float hit_record::t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="11" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhit__record_1af0d915768e7418302348430cb788836b" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 hit_record::p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="12" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhit__record_1a13e119913532f25f57679403759bccfa" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 hit_record::normal</definition>
+        <argsstring></argsstring>
+        <name>normal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="13" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhit__record_1a6578f1320cbf589873522f932f668a89" prot="public" static="no" mutable="no">
+        <type><ref refid="classmaterial" kindref="compound">material</ref> *</type>
+        <definition>material* hit_record::mat_ptr</definition>
+        <argsstring></argsstring>
+        <name>mat_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="14" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>modified to keep track of the &apos;hits&apos; that a ray makes </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="17">
+        <label>hit_record</label>
+        <link refid="structhit__record"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>mat_ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="10" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="10" bodyend="15"/>
+    <listofallmembers>
+      <member refid="structhit__record_1a6578f1320cbf589873522f932f668a89" prot="public" virt="non-virtual"><scope>hit_record</scope><name>mat_ptr</name></member>
+      <member refid="structhit__record_1a13e119913532f25f57679403759bccfa" prot="public" virt="non-virtual"><scope>hit_record</scope><name>normal</name></member>
+      <member refid="structhit__record_1af0d915768e7418302348430cb788836b" prot="public" virt="non-virtual"><scope>hit_record</scope><name>p</name></member>
+      <member refid="structhit__record_1a7f01fe93ab07f09e943f772c8f4d86b4" prot="public" virt="non-virtual"><scope>hit_record</scope><name>t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

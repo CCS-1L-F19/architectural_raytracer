@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classBVH" kind="class" language="C++" prot="public">
+    <compoundname>BVH</compoundname>
+    <includes refid="BVH_8h" local="no">BVH.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classBVH_1a1dc5949b8bfd011e7aa31644a3ccff1c" prot="public" static="no" mutable="no">
+        <type><ref refid="structNode" kindref="compound">Node</ref> *</type>
+        <definition>Node* BVH::root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="32" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBVH_1a1b7c1ef012cd3ff510ec062dde2aa3e3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int BVH::numobjects</definition>
+        <argsstring></argsstring>
+        <name>numobjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="33" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBVH_1a79e0ebc1aeb93f2cb48c8d625a0987ae" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classhitable" kindref="compound">hitable</ref> * &gt;</type>
+        <definition>std::vector&lt;hitable*&gt; BVH::objects</definition>
+        <argsstring></argsstring>
+        <name>objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="34" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBVH_1aa0760b0b7228793d38ea6ea30e6d3b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BVH::BVH</definition>
+        <argsstring>(hitable **world, int n, vec3 b1, vec3 b2)</argsstring>
+        <name>BVH</name>
+        <param>
+          <type><ref refid="classhitable" kindref="compound">hitable</ref> **</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>b1</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>b2</declname>
+        </param>
+        <briefdescription>
+<para>constructor creates binary-tree of sub-volumes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="24" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" bodystart="74" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classBVH_1ab7bec51470cf0ddd5fbbaf372b7274af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BVH::BVH</definition>
+        <argsstring>(std::vector&lt; hitable *&gt; world, int n, vec3 b1, vec3 b2)</argsstring>
+        <name>BVH</name>
+        <param>
+          <type>std::vector&lt; <ref refid="classhitable" kindref="compound">hitable</ref> *&gt;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>b1</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>b2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="25" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" bodystart="86" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classBVH_1a7f87368f487a6d72df69a74028efe908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::set&lt; <ref refid="classhitable" kindref="compound">hitable</ref> * &gt;</type>
+        <definition>std::set&lt; hitable * &gt; BVH::hit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max)</argsstring>
+        <name>hit</name>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="26" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" bodystart="97" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classBVH_1af8e68c4a3e83f26e07b9ca37987eccd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BVH::hit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max, std::set&lt; hitable *&gt; &amp;o)</argsstring>
+        <name>hit</name>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <param>
+          <type>std::set&lt; <ref refid="classhitable" kindref="compound">hitable</ref> *&gt; &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+<para>recursively check whether ray hits <ref refid="classbounding__box" kindref="compound">bounding_box</ref>, and sub-boxes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="28" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" bodystart="107" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classBVH_1a92746586a5885350d9419f2081f3a8d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BVH::recursiveHit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max, Node *roott, std::set&lt; hitable *&gt; &amp;o)</argsstring>
+        <name>recursiveHit</name>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <param>
+          <type><ref refid="structNode" kindref="compound">Node</ref> *</type>
+          <declname>roott</declname>
+        </param>
+        <param>
+          <type>std::set&lt; <ref refid="classhitable" kindref="compound">hitable</ref> *&gt; &amp;</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="29" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.cpp" bodystart="114" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>represents bounding volume hierachy, an acceleration structure which makes ray tracing much more efficient by implementing tree-based hit-checks. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>bounding_box</label>
+        <link refid="classbounding__box"/>
+      </node>
+      <node id="3">
+        <label>BVH</label>
+        <link refid="classBVH"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Node</label>
+        <link refid="structNode"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" line="20" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h" bodystart="20" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classBVH_1aa0760b0b7228793d38ea6ea30e6d3b27" prot="public" virt="non-virtual"><scope>BVH</scope><name>BVH</name></member>
+      <member refid="classBVH_1ab7bec51470cf0ddd5fbbaf372b7274af" prot="public" virt="non-virtual"><scope>BVH</scope><name>BVH</name></member>
+      <member refid="classBVH_1a7f87368f487a6d72df69a74028efe908" prot="public" virt="non-virtual"><scope>BVH</scope><name>hit</name></member>
+      <member refid="classBVH_1af8e68c4a3e83f26e07b9ca37987eccd9" prot="public" virt="non-virtual"><scope>BVH</scope><name>hit</name></member>
+      <member refid="classBVH_1a1b7c1ef012cd3ff510ec062dde2aa3e3" prot="public" virt="non-virtual"><scope>BVH</scope><name>numobjects</name></member>
+      <member refid="classBVH_1a79e0ebc1aeb93f2cb48c8d625a0987ae" prot="public" virt="non-virtual"><scope>BVH</scope><name>objects</name></member>
+      <member refid="classBVH_1a92746586a5885350d9419f2081f3a8d3" prot="public" virt="non-virtual"><scope>BVH</scope><name>recursiveHit</name></member>
+      <member refid="classBVH_1a1dc5949b8bfd011e7aa31644a3ccff1c" prot="public" virt="non-virtual"><scope>BVH</scope><name>root</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

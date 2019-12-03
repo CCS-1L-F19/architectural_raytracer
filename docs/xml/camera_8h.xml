@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="camera_8h" kind="file" language="C++">
+    <compoundname>camera.h</compoundname>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <includes local="no">math.h</includes>
+    <includedby refid="camera_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="175">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>math.h</label>
+      </node>
+      <node id="176">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="177" relation="include">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classcamera" prot="public">camera</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>CAMERAH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CAMERAH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classcamera" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcamera" kindref="compound">camera</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>lower_left,width,height,origin;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vfov,aspect;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>half_height,half_width;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>theta;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcamera" kindref="compound">camera</ref>(vec3<sp/>lookfrom,vec3<sp/>lookat,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fovvert,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>aspect_ratio);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classray" kindref="compound">ray</ref><sp/><ref refid="classcamera_1ac07475d14a514c600c799bc7dd2c0907" kindref="member">get_ray</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>s,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>d);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h"/>
+  </compounddef>
+</doxygen>

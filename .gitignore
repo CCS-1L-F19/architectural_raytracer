@@ -3,6 +3,8 @@
 main
 
 # Output files specific to this project
+*.cmake 
+*.in
 
 *.ppm
 *.png
