@@ -4,6 +4,7 @@ Raytracer for rendering architechtural designs in C++ (probably).
 
 ```
 $ git clone git@github.com:CCS-1L-F19/architectural_raytracer.git
+$ cd src
 $ make clean
 $ make main
 $ ./main [1] [2] [3] [4]
@@ -29,3 +30,7 @@ It should look something like
 A cooler image, that took a bit longer to render, is below:
 
 ![](https://i.imgur.com/AgZUNIn.png)
+
+To generate new documentation, cd into `docs` and run `doxygen`. To reconfigure, edit  `Doxyfile`.
+
+Documentation for this project can be found at: https://ccs-1l-f19.github.io/architectural_raytracer/
