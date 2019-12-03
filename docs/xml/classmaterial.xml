@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classmaterial" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>material</compoundname>
+    <derivedcompoundref refid="classdielectric" prot="public" virt="non-virtual">dielectric</derivedcompoundref>
+    <derivedcompoundref refid="classdiffuse" prot="public" virt="non-virtual">diffuse</derivedcompoundref>
+    <derivedcompoundref refid="classmetal" prot="public" virt="non-virtual">metal</derivedcompoundref>
+    <includes refid="material_8h" local="no">material.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmaterial_1a2da9f6f33e921d48b7b6e753fbe68cc7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool material::scatter</definition>
+        <argsstring>(ray &amp;r_in, hit_record &amp;rec, vec3 &amp;attenuation, ray &amp;scattered) const =0</argsstring>
+        <name>scatter</name>
+        <reimplementedby refid="classdiffuse_1a4876bba63de5563e0c4b6460224e4bb1">scatter</reimplementedby>
+        <reimplementedby refid="classmetal_1a10a5e6a8335687f98b58ea59cac5b694">scatter</reimplementedby>
+        <reimplementedby refid="classdielectric_1abfac7c2499f64b0a5589bb3980c4e59f">scatter</reimplementedby>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r_in</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <param>
+          <type>vec3 &amp;</type>
+          <declname>attenuation</declname>
+        </param>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>scattered</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="12" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ABSTRACT <ndash/> all materials will scatter() light in different ways. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="28">
+        <label>diffuse</label>
+        <link refid="classdiffuse"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+      <node id="29">
+        <label>metal</label>
+        <link refid="classmetal"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>dielectric</label>
+        <link refid="classdielectric"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" line="10" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/material.h" bodystart="10" bodyend="13"/>
+    <listofallmembers>
+      <member refid="classmaterial_1a2da9f6f33e921d48b7b6e753fbe68cc7" prot="public" virt="pure-virtual"><scope>material</scope><name>scatter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsphere" kind="class" language="C++" prot="public">
+    <compoundname>sphere</compoundname>
+    <basecompoundref refid="classhitable" prot="public" virt="non-virtual">hitable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsphere_1a627be5e72c760037f7e976a00e14192c" prot="private" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 sphere::center</definition>
+        <argsstring></argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="12" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsphere_1a9bad2d7ecf6f75cc998b893248fff8a2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float sphere::radius</definition>
+        <argsstring></argsstring>
+        <name>radius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="13" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsphere_1ad809cfec9959267cd6c60055c3512685" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sphere::sphere</definition>
+        <argsstring>()</argsstring>
+        <name>sphere</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="16" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classsphere_1a4a9dc98ff4d9ea93d7fa0bc1a8e872fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sphere::sphere</definition>
+        <argsstring>(vec3 cen, float r, material *m)</argsstring>
+        <name>sphere</name>
+        <param>
+          <type>vec3</type>
+          <declname>cen</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="classmaterial" kindref="compound">material</ref> *</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="17" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.cpp" bodystart="77" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classsphere_1a51d4c96bcacbbb4bd11083ce2d6e101e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>vec3</type>
+        <definition>vec3 sphere::min_bound</definition>
+        <argsstring>()</argsstring>
+        <name>min_bound</name>
+        <reimplements refid="classhitable_1ae7cfa0d0445eb013ebe646fb2e4d9877">min_bound</reimplements>
+        <briefdescription>
+<para>not used </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="19" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.cpp" bodystart="6" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classsphere_1adb18340a7be789ee0e8ab2a6342684fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>vec3</type>
+        <definition>vec3 sphere::max_bound</definition>
+        <argsstring>()</argsstring>
+        <name>max_bound</name>
+        <reimplements refid="classhitable_1abd9db9596a4f5bcb765b02ffb31de39c">max_bound</reimplements>
+        <briefdescription>
+<para>not used </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="20" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classsphere_1a35269706d92c22a6560d038ad2cb0192" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool sphere::hit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max, hit_record &amp;rec) const</argsstring>
+        <name>hit</name>
+        <reimplements refid="classhitable_1a266c04b5d3274c9e5eac7d2834bb1342">hit</reimplements>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <briefdescription>
+<para>ray-sphere intersection is mathematically determined </para>        </briefdescription>
+        <detaileddescription>
+<para>mathematically determine sphere-line intersection, and modify <ref refid="structhit__record" kindref="compound">hit_record</ref> parameter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="22" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.cpp" bodystart="17" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classsphere_1a92ec275047fef95f50265a418b55ac66" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool sphere::in_box</definition>
+        <argsstring>(vec3 min, vec3 max)</argsstring>
+        <name>in_box</name>
+        <reimplements refid="classhitable_1a02ab6294341e1928ca3d78fca62d0748">in_box</reimplements>
+        <param>
+          <type>vec3</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>sphere-box intersection test </para>        </briefdescription>
+        <detaileddescription>
+<para>test sphere-box intersection to be used in bounding volume hierarchy </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="24" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.cpp" bodystart="48" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="41">
+        <label>hitable</label>
+        <link refid="classhitable"/>
+      </node>
+      <node id="40">
+        <label>sphere</label>
+        <link refid="classsphere"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="44">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+      <node id="43">
+        <label>hitable</label>
+        <link refid="classhitable"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>matptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>sphere</label>
+        <link refid="classsphere"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" line="9" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/sphere.h" bodystart="9" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classsphere_1a627be5e72c760037f7e976a00e14192c" prot="private" virt="non-virtual"><scope>sphere</scope><name>center</name></member>
+      <member refid="classsphere_1a35269706d92c22a6560d038ad2cb0192" prot="public" virt="virtual"><scope>sphere</scope><name>hit</name></member>
+      <member refid="classsphere_1a92ec275047fef95f50265a418b55ac66" prot="public" virt="virtual"><scope>sphere</scope><name>in_box</name></member>
+      <member refid="classhitable_1aacc372725176a70749477e1a358d9609" prot="protected" virt="non-virtual"><scope>sphere</scope><name>matptr</name></member>
+      <member refid="classsphere_1adb18340a7be789ee0e8ab2a6342684fe" prot="public" virt="virtual"><scope>sphere</scope><name>max_bound</name></member>
+      <member refid="classsphere_1a51d4c96bcacbbb4bd11083ce2d6e101e" prot="public" virt="virtual"><scope>sphere</scope><name>min_bound</name></member>
+      <member refid="classsphere_1a9bad2d7ecf6f75cc998b893248fff8a2" prot="private" virt="non-virtual"><scope>sphere</scope><name>radius</name></member>
+      <member refid="classsphere_1ad809cfec9959267cd6c60055c3512685" prot="public" virt="non-virtual"><scope>sphere</scope><name>sphere</name></member>
+      <member refid="classsphere_1a4a9dc98ff4d9ea93d7fa0bc1a8e872fb" prot="public" virt="non-virtual"><scope>sphere</scope><name>sphere</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

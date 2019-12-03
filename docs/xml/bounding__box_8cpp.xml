@@ -1,0 +1,948 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="bounding__box_8cpp" kind="file" language="C++">
+    <compoundname>bounding_box.cpp</compoundname>
+    <includes refid="bounding__box_8h" local="yes">bounding_box.h</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/_fixes.hpp</includes>
+    <includes local="no">cmath</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/setup.hpp</includes>
+    <includes local="no">cassert</includes>
+    <includes local="no">cstddef</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/simd/platform.h</includes>
+    <includes local="no">climits</includes>
+    <includes local="no">cfloat</includes>
+    <includes local="no">limits</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/fwd.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/qualifier.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec2.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/compute_vector_relational.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec3.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec4.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat2x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x2.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/matrix.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat2x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x3.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat2x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x4.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat3x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x2.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat3x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x3.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat3x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x4.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x2.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x3.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x3.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x3_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x4.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x4.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x4_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_matrix.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/geometric.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_geometric.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/exponential.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec1.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec1.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_exponential.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vector_relational.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_vector_relational.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/_vectorize.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/common.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_common.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/compute_common.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x2.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x2_precision.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/trigonometric.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_trigonometric.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/packing.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_packing.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_half.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_half.inl</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/integer.hpp</includes>
+    <includes local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_integer.inl</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="78">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x2.hpp</label>
+      </node>
+      <node id="132">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x2.hpp</label>
+      </node>
+      <node id="40">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int3.hpp</label>
+      </node>
+      <node id="55">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint4.hpp</label>
+      </node>
+      <node id="43">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint3_precision.hpp</label>
+      </node>
+      <node id="90">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat3x4.hpp</label>
+      </node>
+      <node id="14">
+        <label>limits</label>
+      </node>
+      <node id="124">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_exponential.inl</label>
+      </node>
+      <node id="67">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x3.hpp</label>
+      </node>
+      <node id="73">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x4_precision.hpp</label>
+      </node>
+      <node id="140">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/integer.hpp</label>
+      </node>
+      <node id="92">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x4.hpp</label>
+      </node>
+      <node id="129">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_common.inl</label>
+      </node>
+      <node id="74">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x4.hpp</label>
+      </node>
+      <node id="6">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/_fixes.hpp</label>
+      </node>
+      <node id="46">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec4.hpp</label>
+      </node>
+      <node id="139">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_half.inl</label>
+      </node>
+      <node id="102">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x2.hpp</label>
+      </node>
+      <node id="94">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x4_precision.hpp</label>
+      </node>
+      <node id="119">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/geometric.hpp</label>
+      </node>
+      <node id="133">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x2_precision.hpp</label>
+      </node>
+      <node id="28">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int2_precision.hpp</label>
+      </node>
+      <node id="118">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_matrix.inl</label>
+      </node>
+      <node id="21">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/compute_vector_relational.hpp</label>
+      </node>
+      <node id="115">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x4_precision.hpp</label>
+      </node>
+      <node id="109">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x3.hpp</label>
+      </node>
+      <node id="86">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x3.inl</label>
+      </node>
+      <node id="19">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec2.hpp</label>
+      </node>
+      <node id="82">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x2_precision.hpp</label>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="9">
+        <label>cassert</label>
+      </node>
+      <node id="84">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x3.hpp</label>
+      </node>
+      <node id="37">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float3_precision.hpp</label>
+      </node>
+      <node id="126">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_vector_relational.inl</label>
+      </node>
+      <node id="4">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x4.hpp</label>
+      </node>
+      <node id="128">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/common.hpp</label>
+      </node>
+      <node id="48">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool4_precision.hpp</label>
+      </node>
+      <node id="64">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x3.hpp</label>
+      </node>
+      <node id="79">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x2.inl</label>
+      </node>
+      <node id="33">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec3.hpp</label>
+      </node>
+      <node id="103">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x2_precision.hpp</label>
+      </node>
+      <node id="30">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint2_precision.hpp</label>
+      </node>
+      <node id="137">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_packing.inl</label>
+      </node>
+      <node id="123">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec1.inl</label>
+      </node>
+      <node id="24">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float2_precision.hpp</label>
+      </node>
+      <node id="1">
+        <label>bounding_box.h</label>
+        <link refid="bounding__box_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x2.hpp</label>
+      </node>
+      <node id="59">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x2.hpp</label>
+      </node>
+      <node id="15">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/fwd.hpp</label>
+      </node>
+      <node id="26">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double2_precision.hpp</label>
+      </node>
+      <node id="62">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat2x3.hpp</label>
+      </node>
+      <node id="13">
+        <label>cfloat</label>
+      </node>
+      <node id="61">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/matrix.hpp</label>
+      </node>
+      <node id="93">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x4.inl</label>
+      </node>
+      <node id="66">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x3_precision.hpp</label>
+      </node>
+      <node id="57">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat2x2.hpp</label>
+      </node>
+      <node id="91">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x4.hpp</label>
+      </node>
+      <node id="106">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x3.hpp</label>
+      </node>
+      <node id="11">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/simd/platform.h</label>
+      </node>
+      <node id="125">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vector_relational.hpp</label>
+      </node>
+      <node id="41">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int3_precision.hpp</label>
+      </node>
+      <node id="71">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x4.hpp</label>
+      </node>
+      <node id="87">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x3_precision.hpp</label>
+      </node>
+      <node id="141">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_integer.inl</label>
+      </node>
+      <node id="68">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x3_precision.hpp</label>
+      </node>
+      <node id="47">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec4.inl</label>
+      </node>
+      <node id="135">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_trigonometric.inl</label>
+      </node>
+      <node id="99">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x2.hpp</label>
+      </node>
+      <node id="108">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x3_precision.hpp</label>
+      </node>
+      <node id="104">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x3.hpp</label>
+      </node>
+      <node id="89">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x3_precision.hpp</label>
+      </node>
+      <node id="69">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat2x4.hpp</label>
+      </node>
+      <node id="32">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool3.hpp</label>
+      </node>
+      <node id="65">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x3.inl</label>
+      </node>
+      <node id="35">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool3_precision.hpp</label>
+      </node>
+      <node id="97">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x2.hpp</label>
+      </node>
+      <node id="110">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x3_precision.hpp</label>
+      </node>
+      <node id="8">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/setup.hpp</label>
+      </node>
+      <node id="20">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec2.inl</label>
+      </node>
+      <node id="18">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool2.hpp</label>
+      </node>
+      <node id="113">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x4.hpp</label>
+      </node>
+      <node id="60">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x2.inl</label>
+      </node>
+      <node id="39">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double3_precision.hpp</label>
+      </node>
+      <node id="131">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x2_precision.hpp</label>
+      </node>
+      <node id="51">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double4.hpp</label>
+      </node>
+      <node id="34">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec3.inl</label>
+      </node>
+      <node id="134">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/trigonometric.hpp</label>
+      </node>
+      <node id="81">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x2.hpp</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+      <node id="44">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec4.hpp</label>
+      </node>
+      <node id="130">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/compute_common.hpp</label>
+      </node>
+      <node id="120">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/func_geometric.inl</label>
+      </node>
+      <node id="111">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat4x4.hpp</label>
+      </node>
+      <node id="80">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double3x2_precision.hpp</label>
+      </node>
+      <node id="127">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/_vectorize.hpp</label>
+      </node>
+      <node id="88">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x3.hpp</label>
+      </node>
+      <node id="45">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool4.hpp</label>
+      </node>
+      <node id="107">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x3.inl</label>
+      </node>
+      <node id="72">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat2x4.inl</label>
+      </node>
+      <node id="54">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int4_precision.hpp</label>
+      </node>
+      <node id="31">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec3.hpp</label>
+      </node>
+      <node id="101">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x2_precision.hpp</label>
+      </node>
+      <node id="25">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double2.hpp</label>
+      </node>
+      <node id="63">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x3.hpp</label>
+      </node>
+      <node id="75">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float2x4_precision.hpp</label>
+      </node>
+      <node id="95">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x4.hpp</label>
+      </node>
+      <node id="100">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x2.inl</label>
+      </node>
+      <node id="17">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/vec2.hpp</label>
+      </node>
+      <node id="38">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double3.hpp</label>
+      </node>
+      <node id="23">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float2.hpp</label>
+      </node>
+      <node id="58">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x2.hpp</label>
+      </node>
+      <node id="96">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float3x4_precision.hpp</label>
+      </node>
+      <node id="121">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/exponential.hpp</label>
+      </node>
+      <node id="50">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float4_precision.hpp</label>
+      </node>
+      <node id="142">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_bool2_precision.hpp</label>
+      </node>
+      <node id="16">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/qualifier.hpp</label>
+      </node>
+      <node id="10">
+        <label>cstddef</label>
+      </node>
+      <node id="36">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float3.hpp</label>
+      </node>
+      <node id="117">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_float4x4_precision.hpp</label>
+      </node>
+      <node id="56">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint4_precision.hpp</label>
+      </node>
+      <node id="12">
+        <label>climits</label>
+      </node>
+      <node id="114">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat4x4.inl</label>
+      </node>
+      <node id="105">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x3.hpp</label>
+      </node>
+      <node id="52">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_double4_precision.hpp</label>
+      </node>
+      <node id="0">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.cpp</label>
+        <link refid="bounding__box_8cpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_float4.hpp</label>
+      </node>
+      <node id="70">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double2x4.hpp</label>
+      </node>
+      <node id="98">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x2.hpp</label>
+      </node>
+      <node id="136">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/packing.hpp</label>
+      </node>
+      <node id="53">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int4.hpp</label>
+      </node>
+      <node id="42">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint3.hpp</label>
+      </node>
+      <node id="138">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_half.hpp</label>
+      </node>
+      <node id="83">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat3x3.hpp</label>
+      </node>
+      <node id="29">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_uint2.hpp</label>
+      </node>
+      <node id="76">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/mat3x2.hpp</label>
+      </node>
+      <node id="112">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/matrix_double4x4.hpp</label>
+      </node>
+      <node id="85">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_mat3x3.hpp</label>
+      </node>
+      <node id="27">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/ext/vector_int2.hpp</label>
+      </node>
+      <node id="122">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/glm/detail/type_vec1.hpp</label>
+      </node>
+      <node id="2">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;bounding_box.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">vec3<sp/>bounding_box::min_bound(){</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">vec3<sp/>bounding_box::max_bound(){</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bounding_box::volume(){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x<sp/>-<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x)*(<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>-<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y)*(<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z<sp/>-<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">bounding_box::bounding_box(vec3<sp/>Min,vec3<sp/>Max,<ref refid="classhitable" kindref="compound">hitable</ref>**<sp/>h,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref><sp/>=<sp/>Min;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref><sp/>=<sp/>Max;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>inside.assign(h,h+n);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box_1a0a5d20a1e613f37efb0f2f5aeae24a82" kindref="member">numobjects</ref><sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">bounding_box::bounding_box(vec3<sp/>Min,vec3<sp/>Max,std::vector&lt;hitable*&gt;<sp/>&amp;h,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref><sp/>=<sp/>Min;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref><sp/>=<sp/>Max;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>inside<sp/>=<sp/>h;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box_1a0a5d20a1e613f37efb0f2f5aeae24a82" kindref="member">numobjects</ref><sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kindref="member">bounding_box::hit</ref>(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;<sp/>r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Origin:<sp/>&quot;<sp/>&lt;&lt;<sp/>r.origin().x<sp/>&lt;&lt;<sp/>&quot;,&quot;&lt;&lt;r.origin().y<sp/>&lt;&lt;&quot;,&quot;&lt;&lt;r.origin().z<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Dir:<sp/>&quot;<sp/>&lt;&lt;<sp/>r.dir().x<sp/>&lt;&lt;<sp/>&quot;,&quot;&lt;&lt;r.dir().y<sp/>&lt;&lt;&quot;,&quot;&lt;&lt;r.dir().z<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;B1:<sp/>&quot;<sp/>&lt;&lt;<sp/>bound1.x<sp/>&lt;&lt;<sp/>&quot;,&quot;&lt;&lt;bound1.y<sp/>&lt;&lt;&quot;,&quot;&lt;&lt;bound1.z<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;B2:<sp/>&quot;<sp/>&lt;&lt;<sp/>bound2.x<sp/>&lt;&lt;<sp/>&quot;,&quot;&lt;&lt;bound2.y<sp/>&lt;&lt;&quot;,&quot;&lt;&lt;bound2.z<sp/>&lt;&lt;<sp/>std::endl<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(r.dir().x<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t1x<sp/>=<sp/>(<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x<sp/>-<sp/>r.origin().x)<sp/>/<sp/>r.dir().x;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t2x<sp/>=<sp/>(<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x<sp/>-<sp/>r.origin().x)<sp/>/<sp/>r.dir().x;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t1x<sp/>&gt;<sp/>t_min<sp/>&amp;&amp;<sp/>t1x<sp/>&lt;<sp/>t_max<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1x).y<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1x).y<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1x).z<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1x).z<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z){</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t2x<sp/>&gt;<sp/>t_min<sp/>&amp;&amp;<sp/>t2x<sp/>&lt;<sp/>t_max<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2x).y<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2x).y<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2x).z<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2x).z<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(r.dir().y<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t1y<sp/>=<sp/>(<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y<sp/>-<sp/>r.origin().y)<sp/>/<sp/>r.dir().y;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t2y<sp/>=<sp/>(<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>-<sp/>r.origin().y)<sp/>/<sp/>r.dir().y;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t1y<sp/>&gt;<sp/>t_min<sp/>&amp;&amp;<sp/>t1y<sp/>&lt;<sp/>t_max<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1y).x<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1y).x<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1y).z<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1y).z<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t2y<sp/>&gt;<sp/>t_min<sp/>&amp;&amp;<sp/>t2y<sp/>&lt;<sp/>t_max<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2y).x<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2y).x<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2y).z<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2y).z<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z){</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(r.dir().z<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t1z<sp/>=<sp/>(<ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.z<sp/>-<sp/>r.origin().z)<sp/>/<sp/>r.dir().z;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t2z<sp/>=<sp/>(<ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.z<sp/>-<sp/>r.origin().z)<sp/>/<sp/>r.dir().z;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t1z<sp/>&gt;<sp/>t_min<sp/>&amp;&amp;<sp/>t1z<sp/>&lt;<sp/>t_max<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1z).y<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1z).y<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1z).x<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t1z).x<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x){</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t2z<sp/>&gt;<sp/>t_min<sp/>&amp;&amp;<sp/>t2z<sp/>&lt;<sp/>t_max<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2z).y<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2z).y<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.y<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2z).x<sp/>&gt;<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>.x<sp/>&amp;&amp;<sp/>r.<ref refid="classray_1a8937338e8d3b45dd503e1e825a57ffe0" kindref="member">point_at_t</ref>(t2z).x<sp/>&lt;<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>.x){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bounding_box::in_box(vec3<sp/>min,vec3<sp/>max){</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO?<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.cpp"/>
+  </compounddef>
+</doxygen>

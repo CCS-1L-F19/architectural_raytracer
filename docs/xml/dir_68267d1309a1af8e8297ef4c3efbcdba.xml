@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src</compoundname>
+    <innerfile refid="bounding__box_8cpp">bounding_box.cpp</innerfile>
+    <innerfile refid="bounding__box_8h">bounding_box.h</innerfile>
+    <innerfile refid="BVH_8cpp">BVH.cpp</innerfile>
+    <innerfile refid="BVH_8h">BVH.h</innerfile>
+    <innerfile refid="camera_8cpp">camera.cpp</innerfile>
+    <innerfile refid="camera_8h">camera.h</innerfile>
+    <innerfile refid="hitable_8h">hitable.h</innerfile>
+    <innerfile refid="hitable__list_8h">hitable_list.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="material_8cpp">material.cpp</innerfile>
+    <innerfile refid="material_8h">material.h</innerfile>
+    <innerfile refid="ray_8h">ray.h</innerfile>
+    <innerfile refid="sphere_8cpp">sphere.cpp</innerfile>
+    <innerfile refid="sphere_8h">sphere.h</innerfile>
+    <innerfile refid="triangle_8cpp">triangle.cpp</innerfile>
+    <innerfile refid="triangle_8h">triangle.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="bounding__box_8h" kind="file" language="C++">
+    <compoundname>bounding_box.h</compoundname>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <includes refid="hitable_8h" local="yes">hitable.h</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="bounding__box_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.cpp</includedby>
+    <includedby refid="BVH_8h" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h</includedby>
+    <incdepgraph>
+      <node id="147">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="146" relation="include">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.h</label>
+        <link refid="bounding__box_8h"/>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>vector</label>
+      </node>
+      <node id="146">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="145" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="149">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.h</label>
+        <link refid="bounding__box_8h"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/BVH.h</label>
+        <link refid="BVH_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classbounding__box" prot="public">bounding_box</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>BBOXH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BBOXH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hitable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classbounding__box" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbounding__box" kindref="compound">bounding_box</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classbounding__box_1a6b2939be917436f6129c85ad3447895e" kindref="member">hit</ref>(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;<sp/>r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>min_bound();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>max_bound();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>volume();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>in_box(vec3<sp/>min,vec3<sp/>max);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//construct<sp/>from<sp/>list<sp/>of<sp/>hitables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(){}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(vec3<sp/>Min,vec3<sp/>Max,<ref refid="classhitable" kindref="compound">hitable</ref>**<sp/>h,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classbounding__box" kindref="compound">bounding_box</ref>(vec3<sp/>Min,vec3<sp/>Max,std::vector&lt;hitable*&gt;<sp/>&amp;h,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;hitable*&gt;<sp/>inside;</highlight></codeline>
+<codeline lineno="26" refid="classbounding__box_1a0a5d20a1e613f37efb0f2f5aeae24a82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classbounding__box_1a0a5d20a1e613f37efb0f2f5aeae24a82" kindref="member">numobjects</ref>;</highlight></codeline>
+<codeline lineno="28" refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="classbounding__box_1a759576bfdf13821ba444e7f750a7fa48" kindref="member">bound1</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="classbounding__box_1a891b89fb85b53542d0f0b9f6c94f7624" kindref="member">bound2</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/bounding_box.h"/>
+  </compounddef>
+</doxygen>

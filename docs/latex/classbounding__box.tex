@@ -1,0 +1,59 @@
+\hypertarget{classbounding__box}{}\section{bounding\+\_\+box Class Reference}
+\label{classbounding__box}\index{bounding\+\_\+box@{bounding\+\_\+box}}
+
+
+individual members of the bounding-\/volume-\/hierarchy  
+
+
+
+
+{\ttfamily \#include $<$bounding\+\_\+box.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbounding__box_a6b2939be917436f6129c85ad3447895e}\label{classbounding__box_a6b2939be917436f6129c85ad3447895e}} 
+bool \hyperlink{classbounding__box_a6b2939be917436f6129c85ad3447895e}{hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max) const
+\begin{DoxyCompactList}\small\item\em check whether ray hits bounding box \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbounding__box_a3d09525eb8ea353cf06e3c6b2ed7fa14}\label{classbounding__box_a3d09525eb8ea353cf06e3c6b2ed7fa14}} 
+vec3 {\bfseries min\+\_\+bound} ()
+\item 
+\mbox{\Hypertarget{classbounding__box_a1df427cb2a119936314782fe7106ca16}\label{classbounding__box_a1df427cb2a119936314782fe7106ca16}} 
+vec3 {\bfseries max\+\_\+bound} ()
+\item 
+\mbox{\Hypertarget{classbounding__box_a96cc03ca301e8ee9d418c8af75f6daa6}\label{classbounding__box_a96cc03ca301e8ee9d418c8af75f6daa6}} 
+float {\bfseries volume} ()
+\item 
+\mbox{\Hypertarget{classbounding__box_a65ad67dce99f3bea6db51e9e0a66f8bc}\label{classbounding__box_a65ad67dce99f3bea6db51e9e0a66f8bc}} 
+bool {\bfseries in\+\_\+box} (vec3 min, vec3 max)
+\item 
+\mbox{\Hypertarget{classbounding__box_ab92abf4b4ed8f2f870c93b4ddb4be356}\label{classbounding__box_ab92abf4b4ed8f2f870c93b4ddb4be356}} 
+{\bfseries bounding\+\_\+box} (vec3 Min, vec3 Max, \hyperlink{classhitable}{hitable} $\ast$$\ast$h, int n)
+\item 
+\mbox{\Hypertarget{classbounding__box_a894d1a3fb2f2891327c280ef4ca0c71f}\label{classbounding__box_a894d1a3fb2f2891327c280ef4ca0c71f}} 
+{\bfseries bounding\+\_\+box} (vec3 Min, vec3 Max, std\+::vector$<$ \hyperlink{classhitable}{hitable} $\ast$$>$ \&h, int n)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbounding__box_ad73d9a860b3da08a814cfc1d38d26eed}\label{classbounding__box_ad73d9a860b3da08a814cfc1d38d26eed}} 
+std\+::vector$<$ \hyperlink{classhitable}{hitable} $\ast$ $>$ {\bfseries inside}
+\item 
+\mbox{\Hypertarget{classbounding__box_a0a5d20a1e613f37efb0f2f5aeae24a82}\label{classbounding__box_a0a5d20a1e613f37efb0f2f5aeae24a82}} 
+int \hyperlink{classbounding__box_a0a5d20a1e613f37efb0f2f5aeae24a82}{numobjects}
+\begin{DoxyCompactList}\small\item\em determined at construction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbounding__box_a759576bfdf13821ba444e7f750a7fa48}\label{classbounding__box_a759576bfdf13821ba444e7f750a7fa48}} 
+vec3 \hyperlink{classbounding__box_a759576bfdf13821ba444e7f750a7fa48}{bound1}
+\begin{DoxyCompactList}\small\item\em min bound/bottom left vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbounding__box_a891b89fb85b53542d0f0b9f6c94f7624}\label{classbounding__box_a891b89fb85b53542d0f0b9f6c94f7624}} 
+vec3 \hyperlink{classbounding__box_a891b89fb85b53542d0f0b9f6c94f7624}{bound2}
+\begin{DoxyCompactList}\small\item\em max bound/top right vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+individual members of the bounding-\/volume-\/hierarchy 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/bounding\+\_\+box.\+h\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/bounding\+\_\+box.\+cpp\end{DoxyCompactItemize}

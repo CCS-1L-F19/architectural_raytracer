@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="triangle_8h" kind="file" language="C++">
+    <compoundname>triangle.h</compoundname>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includes refid="hitable_8h" local="yes">hitable.h</includes>
+    <includes refid="material_8h" local="yes">material.h</includes>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <includedby refid="main_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/main.cpp</includedby>
+    <includedby refid="triangle_8cpp" local="yes">/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.cpp</includedby>
+    <incdepgraph>
+      <node id="327">
+        <label>/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h</label>
+        <link refid="triangle_8h"/>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+        <childnode refid="331" relation="include">
+        </childnode>
+        <childnode refid="330" relation="include">
+        </childnode>
+      </node>
+      <node id="329">
+        <label>hitable.h</label>
+        <link refid="hitable_8h_source"/>
+        <childnode refid="330" relation="include">
+        </childnode>
+      </node>
+      <node id="330">
+        <label>ray.h</label>
+        <link refid="ray_8h_source"/>
+        <childnode refid="328" relation="include">
+        </childnode>
+      </node>
+      <node id="331">
+        <label>material.h</label>
+        <link refid="material_8h_source"/>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="330" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+      </node>
+      <node id="328">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtriangle" prot="public">triangle</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hitable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;material.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceglm" kindref="compound">glm</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classtriangle" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtriangle" kindref="compound">triangle</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classhitable" kindref="compound">hitable</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>p1,p2,p3;</highlight></codeline>
+<codeline lineno="16" refid="classtriangle_1ac0103b1d5b30325a6b785b50bd9eba8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/><ref refid="classtriangle_1ac0103b1d5b30325a6b785b50bd9eba8a" kindref="member">normal</ref>,negnormal;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>overlap(vec3<sp/>axis,vec3<sp/>min,vec3<sp/>max);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtriangle" kindref="compound">triangle</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtriangle" kindref="compound">triangle</ref>(vec3<sp/>p1,vec3<sp/>p2,vec3<sp/>p3,vec3<sp/>normal,<ref refid="classmaterial" kindref="compound">material</ref>*<sp/>matptr);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtriangle" kindref="compound">triangle</ref>(vec3<sp/>p1,vec3<sp/>p2,vec3<sp/>p3,<ref refid="classmaterial" kindref="compound">material</ref>*<sp/>matptr);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="classtriangle" kindref="compound">triangle</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>min_bound();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>vec3<sp/>max_bound();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hit(<ref refid="classray" kindref="compound">ray</ref><sp/>&amp;<sp/>r,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_min,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>t_max,<ref refid="structhit__record" kindref="compound">hit_record</ref><sp/>&amp;<sp/>rec)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>in_box(vec3<sp/>min,vec3<sp/>max);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/triangle.h"/>
+  </compounddef>
+</doxygen>

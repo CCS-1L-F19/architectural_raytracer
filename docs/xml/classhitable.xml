@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classhitable" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>hitable</compoundname>
+    <derivedcompoundref refid="classsphere" prot="public" virt="non-virtual">sphere</derivedcompoundref>
+    <derivedcompoundref refid="classtriangle" prot="public" virt="non-virtual">triangle</derivedcompoundref>
+    <includes refid="hitable_8h" local="no">hitable.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classhitable_1aacc372725176a70749477e1a358d9609" prot="protected" static="no" mutable="no">
+        <type><ref refid="classmaterial" kindref="compound">material</ref> *</type>
+        <definition>material* hitable::matptr</definition>
+        <argsstring></argsstring>
+        <name>matptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="26" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classhitable_1a266c04b5d3274c9e5eac7d2834bb1342" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool hitable::hit</definition>
+        <argsstring>(ray &amp;r, float t_min, float t_max, hit_record &amp;rec) const =0</argsstring>
+        <name>hit</name>
+        <reimplementedby refid="classsphere_1a35269706d92c22a6560d038ad2cb0192">hit</reimplementedby>
+        <reimplementedby refid="classtriangle_1a47af01f4325462cc2a86bd4dcb61d8cf">hit</reimplementedby>
+        <param>
+          <type><ref refid="classray" kindref="compound">ray</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t_max</declname>
+        </param>
+        <param>
+          <type><ref refid="structhit__record" kindref="compound">hit_record</ref> &amp;</type>
+          <declname>rec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classhitable_1ae7cfa0d0445eb013ebe646fb2e4d9877" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>vec3</type>
+        <definition>virtual vec3 hitable::min_bound</definition>
+        <argsstring>()=0</argsstring>
+        <name>min_bound</name>
+        <reimplementedby refid="classsphere_1a51d4c96bcacbbb4bd11083ce2d6e101e">min_bound</reimplementedby>
+        <reimplementedby refid="classtriangle_1ac18d5da9f057e8531cc24c2c800d5042">min_bound</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classhitable_1abd9db9596a4f5bcb765b02ffb31de39c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>vec3</type>
+        <definition>virtual vec3 hitable::max_bound</definition>
+        <argsstring>()=0</argsstring>
+        <name>max_bound</name>
+        <reimplementedby refid="classsphere_1adb18340a7be789ee0e8ab2a6342684fe">max_bound</reimplementedby>
+        <reimplementedby refid="classtriangle_1a956f30e917b4f1b0fac36044a566b57f">max_bound</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classhitable_1a02ab6294341e1928ca3d78fca62d0748" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool hitable::in_box</definition>
+        <argsstring>(vec3 min, vec3 max)=0</argsstring>
+        <name>in_box</name>
+        <reimplementedby refid="classsphere_1a92ec275047fef95f50265a418b55ac66">in_box</reimplementedby>
+        <reimplementedby refid="classtriangle_1acc11a7da8ab72f36669b5c3f1094925b">in_box</reimplementedby>
+        <param>
+          <type>vec3</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="23" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>a virtual class from which all objects inherit </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="21">
+        <label>triangle</label>
+        <link refid="classtriangle"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>hitable</label>
+        <link refid="classhitable"/>
+      </node>
+      <node id="20">
+        <label>sphere</label>
+        <link refid="classsphere"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23">
+        <label>material</label>
+        <link refid="classmaterial"/>
+      </node>
+      <node id="22">
+        <label>hitable</label>
+        <link refid="classhitable"/>
+        <childnode refid="23" relation="usage">
+          <edgelabel>matptr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" line="18" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/hitable.h" bodystart="18" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classhitable_1a266c04b5d3274c9e5eac7d2834bb1342" prot="public" virt="pure-virtual"><scope>hitable</scope><name>hit</name></member>
+      <member refid="classhitable_1a02ab6294341e1928ca3d78fca62d0748" prot="public" virt="pure-virtual"><scope>hitable</scope><name>in_box</name></member>
+      <member refid="classhitable_1aacc372725176a70749477e1a358d9609" prot="protected" virt="non-virtual"><scope>hitable</scope><name>matptr</name></member>
+      <member refid="classhitable_1abd9db9596a4f5bcb765b02ffb31de39c" prot="public" virt="pure-virtual"><scope>hitable</scope><name>max_bound</name></member>
+      <member refid="classhitable_1ae7cfa0d0445eb013ebe646fb2e4d9877" prot="public" virt="pure-virtual"><scope>hitable</scope><name>min_bound</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

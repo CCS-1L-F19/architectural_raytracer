@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcamera" kind="class" language="C++" prot="public">
+    <compoundname>camera</compoundname>
+    <includes refid="camera_8h" local="no">camera.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcamera_1a2f92acd972a066f66e23fe1bf2dd2103" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 camera::lower_left</definition>
+        <argsstring></argsstring>
+        <name>lower_left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="9" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a079a21af8444ce2fa7f324382de572cf" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 camera::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="9" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a86f4f180a82dfe1547f5a68c40aaf40c" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 camera::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="9" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a0e8ae66c9bc5ce2a29a5ca9e029d8273" prot="public" static="no" mutable="no">
+        <type>vec3</type>
+        <definition>vec3 camera::origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="9" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a00668ef9694435ed11bd724db3d990d6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::vfov</definition>
+        <argsstring></argsstring>
+        <name>vfov</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="10" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1ae5e04a9d27bbfa0a4d36494c181c2890" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::aspect</definition>
+        <argsstring></argsstring>
+        <name>aspect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="10" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a7c3ed00791d2ec6b83eb2a8f8eba0551" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::half_height</definition>
+        <argsstring></argsstring>
+        <name>half_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="11" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a8652265a457b06b1c184e09b56fe8194" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::half_width</definition>
+        <argsstring></argsstring>
+        <name>half_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="11" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcamera_1a6bbc5464ba7372a1fa783ba3c6719979" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float camera::theta</definition>
+        <argsstring></argsstring>
+        <name>theta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="12" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcamera_1a584f8f5a7b7f0238a35115414e3d960a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>camera::camera</definition>
+        <argsstring>(vec3 lookfrom, vec3 lookat, float fovvert, float aspect_ratio)</argsstring>
+        <name>camera</name>
+        <param>
+          <type>vec3</type>
+          <declname>lookfrom</declname>
+        </param>
+        <param>
+          <type>vec3</type>
+          <declname>lookat</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fovvert</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>aspect_ratio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="13" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.cpp" bodystart="3" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classcamera_1ac07475d14a514c600c799bc7dd2c0907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classray" kindref="compound">ray</ref></type>
+        <definition>ray camera::get_ray</definition>
+        <argsstring>(float s, float d)</argsstring>
+        <name>get_ray</name>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>return ray that points from aperture to a specific pixel </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="15" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.cpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>adjustable camera </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" line="7" column="1" bodyfile="/mnt/c/Users/Sunil/Documents/architectural_raytracer/src/camera.h" bodystart="7" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classcamera_1ae5e04a9d27bbfa0a4d36494c181c2890" prot="public" virt="non-virtual"><scope>camera</scope><name>aspect</name></member>
+      <member refid="classcamera_1a584f8f5a7b7f0238a35115414e3d960a" prot="public" virt="non-virtual"><scope>camera</scope><name>camera</name></member>
+      <member refid="classcamera_1ac07475d14a514c600c799bc7dd2c0907" prot="public" virt="non-virtual"><scope>camera</scope><name>get_ray</name></member>
+      <member refid="classcamera_1a7c3ed00791d2ec6b83eb2a8f8eba0551" prot="public" virt="non-virtual"><scope>camera</scope><name>half_height</name></member>
+      <member refid="classcamera_1a8652265a457b06b1c184e09b56fe8194" prot="public" virt="non-virtual"><scope>camera</scope><name>half_width</name></member>
+      <member refid="classcamera_1a86f4f180a82dfe1547f5a68c40aaf40c" prot="public" virt="non-virtual"><scope>camera</scope><name>height</name></member>
+      <member refid="classcamera_1a2f92acd972a066f66e23fe1bf2dd2103" prot="public" virt="non-virtual"><scope>camera</scope><name>lower_left</name></member>
+      <member refid="classcamera_1a0e8ae66c9bc5ce2a29a5ca9e029d8273" prot="public" virt="non-virtual"><scope>camera</scope><name>origin</name></member>
+      <member refid="classcamera_1a6bbc5464ba7372a1fa783ba3c6719979" prot="public" virt="non-virtual"><scope>camera</scope><name>theta</name></member>
+      <member refid="classcamera_1a00668ef9694435ed11bd724db3d990d6" prot="public" virt="non-virtual"><scope>camera</scope><name>vfov</name></member>
+      <member refid="classcamera_1a079a21af8444ce2fa7f324382de572cf" prot="public" virt="non-virtual"><scope>camera</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

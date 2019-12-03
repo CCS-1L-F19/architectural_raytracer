@@ -1,0 +1,54 @@
+\hypertarget{classBVH}{}\section{B\+VH Class Reference}
+\label{classBVH}\index{B\+VH@{B\+VH}}
+
+
+represents bounding volume hierachy, an acceleration structure which makes ray tracing much more efficient by implementing tree-\/based hit-\/checks.  
+
+
+
+
+{\ttfamily \#include $<$B\+V\+H.\+h$>$}
+
+
+
+Collaboration diagram for B\+VH\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBVH_aa0760b0b7228793d38ea6ea30e6d3b27}\label{classBVH_aa0760b0b7228793d38ea6ea30e6d3b27}} 
+\hyperlink{classBVH_aa0760b0b7228793d38ea6ea30e6d3b27}{B\+VH} (\hyperlink{classhitable}{hitable} $\ast$$\ast$world, int n, vec3 b1, vec3 b2)
+\begin{DoxyCompactList}\small\item\em constructor creates binary-\/tree of sub-\/volumes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBVH_ab7bec51470cf0ddd5fbbaf372b7274af}\label{classBVH_ab7bec51470cf0ddd5fbbaf372b7274af}} 
+{\bfseries B\+VH} (std\+::vector$<$ \hyperlink{classhitable}{hitable} $\ast$$>$ world, int n, vec3 b1, vec3 b2)
+\item 
+\mbox{\Hypertarget{classBVH_a7f87368f487a6d72df69a74028efe908}\label{classBVH_a7f87368f487a6d72df69a74028efe908}} 
+std\+::set$<$ \hyperlink{classhitable}{hitable} $\ast$ $>$ {\bfseries hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max)
+\item 
+\mbox{\Hypertarget{classBVH_af8e68c4a3e83f26e07b9ca37987eccd9}\label{classBVH_af8e68c4a3e83f26e07b9ca37987eccd9}} 
+void \hyperlink{classBVH_af8e68c4a3e83f26e07b9ca37987eccd9}{hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max, std\+::set$<$ \hyperlink{classhitable}{hitable} $\ast$$>$ \&o)
+\begin{DoxyCompactList}\small\item\em recursively check whether ray hits \hyperlink{classbounding__box}{bounding\+\_\+box}, and sub-\/boxes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBVH_a92746586a5885350d9419f2081f3a8d3}\label{classBVH_a92746586a5885350d9419f2081f3a8d3}} 
+void {\bfseries recursive\+Hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max, \hyperlink{structNode}{Node} $\ast$roott, std\+::set$<$ \hyperlink{classhitable}{hitable} $\ast$$>$ \&o)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBVH_a1dc5949b8bfd011e7aa31644a3ccff1c}\label{classBVH_a1dc5949b8bfd011e7aa31644a3ccff1c}} 
+\hyperlink{structNode}{Node} $\ast$ {\bfseries root}
+\item 
+\mbox{\Hypertarget{classBVH_a1b7c1ef012cd3ff510ec062dde2aa3e3}\label{classBVH_a1b7c1ef012cd3ff510ec062dde2aa3e3}} 
+int {\bfseries numobjects}
+\item 
+\mbox{\Hypertarget{classBVH_a79e0ebc1aeb93f2cb48c8d625a0987ae}\label{classBVH_a79e0ebc1aeb93f2cb48c8d625a0987ae}} 
+std\+::vector$<$ \hyperlink{classhitable}{hitable} $\ast$ $>$ {\bfseries objects}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+represents bounding volume hierachy, an acceleration structure which makes ray tracing much more efficient by implementing tree-\/based hit-\/checks. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/B\+V\+H.\+h\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/B\+V\+H.\+cpp\end{DoxyCompactItemize}

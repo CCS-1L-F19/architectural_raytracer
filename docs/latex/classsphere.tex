@@ -1,0 +1,64 @@
+\hypertarget{classsphere}{}\section{sphere Class Reference}
+\label{classsphere}\index{sphere@{sphere}}
+
+
+Inheritance diagram for sphere\+:
+% FIG 0
+
+
+Collaboration diagram for sphere\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsphere_a4a9dc98ff4d9ea93d7fa0bc1a8e872fb}\label{classsphere_a4a9dc98ff4d9ea93d7fa0bc1a8e872fb}} 
+{\bfseries sphere} (vec3 cen, float r, \hyperlink{classmaterial}{material} $\ast$m)
+\item 
+\mbox{\Hypertarget{classsphere_a51d4c96bcacbbb4bd11083ce2d6e101e}\label{classsphere_a51d4c96bcacbbb4bd11083ce2d6e101e}} 
+vec3 \hyperlink{classsphere_a51d4c96bcacbbb4bd11083ce2d6e101e}{min\+\_\+bound} ()
+\begin{DoxyCompactList}\small\item\em not used \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsphere_adb18340a7be789ee0e8ab2a6342684fe}\label{classsphere_adb18340a7be789ee0e8ab2a6342684fe}} 
+vec3 \hyperlink{classsphere_adb18340a7be789ee0e8ab2a6342684fe}{max\+\_\+bound} ()
+\begin{DoxyCompactList}\small\item\em not used \end{DoxyCompactList}\item 
+bool \hyperlink{classsphere_a35269706d92c22a6560d038ad2cb0192}{hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max, \hyperlink{structhit__record}{hit\+\_\+record} \&rec) const
+\begin{DoxyCompactList}\small\item\em ray-\/sphere intersection is mathematically determined \end{DoxyCompactList}\item 
+bool \hyperlink{classsphere_a92ec275047fef95f50265a418b55ac66}{in\+\_\+box} (vec3 min, vec3 max)
+\begin{DoxyCompactList}\small\item\em sphere-\/box intersection test \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsphere_a35269706d92c22a6560d038ad2cb0192}\label{classsphere_a35269706d92c22a6560d038ad2cb0192}} 
+\index{sphere@{sphere}!hit@{hit}}
+\index{hit@{hit}!sphere@{sphere}}
+\subsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool sphere\+::hit (\begin{DoxyParamCaption}\item[{\hyperlink{classray}{ray} \&}]{r,  }\item[{float}]{t\+\_\+min,  }\item[{float}]{t\+\_\+max,  }\item[{\hyperlink{structhit__record}{hit\+\_\+record} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+ray-\/sphere intersection is mathematically determined 
+
+mathematically determine sphere-\/line intersection, and modify \hyperlink{structhit__record}{hit\+\_\+record} parameter 
+
+Implements \hyperlink{classhitable}{hitable}.
+
+\mbox{\Hypertarget{classsphere_a92ec275047fef95f50265a418b55ac66}\label{classsphere_a92ec275047fef95f50265a418b55ac66}} 
+\index{sphere@{sphere}!in\+\_\+box@{in\+\_\+box}}
+\index{in\+\_\+box@{in\+\_\+box}!sphere@{sphere}}
+\subsubsection{\texorpdfstring{in\+\_\+box()}{in\_box()}}
+{\footnotesize\ttfamily bool sphere\+::in\+\_\+box (\begin{DoxyParamCaption}\item[{vec3}]{min,  }\item[{vec3}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+sphere-\/box intersection test 
+
+test sphere-\/box intersection to be used in bounding volume hierarchy 
+
+Implements \hyperlink{classhitable}{hitable}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/sphere.\+h\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/sphere.\+cpp\end{DoxyCompactItemize}

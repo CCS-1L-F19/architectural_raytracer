@@ -1,0 +1,48 @@
+\hypertarget{classhitable}{}\section{hitable Class Reference}
+\label{classhitable}\index{hitable@{hitable}}
+
+
+a virtual class from which all objects inherit  
+
+
+
+
+{\ttfamily \#include $<$hitable.\+h$>$}
+
+
+
+Inheritance diagram for hitable\+:
+% FIG 0
+
+
+Collaboration diagram for hitable\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classhitable_a266c04b5d3274c9e5eac7d2834bb1342}\label{classhitable_a266c04b5d3274c9e5eac7d2834bb1342}} 
+virtual bool {\bfseries hit} (\hyperlink{classray}{ray} \&r, float t\+\_\+min, float t\+\_\+max, \hyperlink{structhit__record}{hit\+\_\+record} \&rec) const =0
+\item 
+\mbox{\Hypertarget{classhitable_ae7cfa0d0445eb013ebe646fb2e4d9877}\label{classhitable_ae7cfa0d0445eb013ebe646fb2e4d9877}} 
+virtual vec3 {\bfseries min\+\_\+bound} ()=0
+\item 
+\mbox{\Hypertarget{classhitable_abd9db9596a4f5bcb765b02ffb31de39c}\label{classhitable_abd9db9596a4f5bcb765b02ffb31de39c}} 
+virtual vec3 {\bfseries max\+\_\+bound} ()=0
+\item 
+\mbox{\Hypertarget{classhitable_a02ab6294341e1928ca3d78fca62d0748}\label{classhitable_a02ab6294341e1928ca3d78fca62d0748}} 
+virtual bool {\bfseries in\+\_\+box} (vec3 min, vec3 max)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classhitable_aacc372725176a70749477e1a358d9609}\label{classhitable_aacc372725176a70749477e1a358d9609}} 
+\hyperlink{classmaterial}{material} $\ast$ {\bfseries matptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+a virtual class from which all objects inherit 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Sunil/\+Documents/architectural\+\_\+raytracer/src/hitable.\+h\end{DoxyCompactItemize}
