@@ -2,8 +2,6 @@
 
 Raytracer for rendering .stl files using C++. Put the files you want to render inside the `STL_files` folder.
 
-Input your 
-
 ```
 $ git clone git@github.com:CCS-1L-F19/architectural_raytracer.git
 $ cd src
