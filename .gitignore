@@ -8,6 +8,7 @@ main
 
 *.ppm
 *.png
+!output.ppm
 
 # Prerequisites
 *.d
