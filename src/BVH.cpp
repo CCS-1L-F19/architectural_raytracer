@@ -9,7 +9,7 @@ void makeTree(Node* root){
 	//std::cout << root->b.volume() << " space in this box" << std::endl;
 	//std::cout << root->b.inside.size() << " triangles in this box" << std::endl;
 
-	if(root->b.volume() <= 0.2f || root->b.inside.size() <= 2){
+	if(root->b.volume() <= 10.0f || root->b.inside.size() <= 2){
 		root->left = NULL;
 		root->right = NULL;
 		//std::cout << root->b.inside.size() << " triangles in this box" << std::endl;

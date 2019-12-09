@@ -44,3 +44,5 @@ main
 
 #3D Models
 *.stl
+!teapot.stl
+!dragon.stl

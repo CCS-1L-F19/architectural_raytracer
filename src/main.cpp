@@ -73,8 +73,6 @@ void consv3(vec3& v,char* facet) {
 
 }
 
-bool prn = 1;
-
 void read_stl(string fname, vector <hitable*>&v, vec3 &min, vec3 &max){
 
     //!!
@@ -85,25 +83,24 @@ void read_stl(string fname, vector <hitable*>&v, vec3 &min, vec3 &max){
 
     char header_info[80] = "";
     char nTri[4];
-    unsigned long nTriLong;
 
     //read 80 byte header
     if (myFile) {
         myFile.read (header_info, 80);
-        cout <<"header: " << header_info << endl;
+        cout << fname.substr(13,fname.size()) + string(" header: ") << header_info << endl;
     }
     else{
-        cout << "error" << endl;
+        cerr << "Error while reading .stl file: file does not exist" << endl;
+        exit(1);
     }
 
     //read 4-byte ulong
     if (myFile) {
         myFile.read (nTri, 4);
-        nTriLong = *((unsigned long*)nTri) ;
-        cout <<"n Tri: " << nTriLong << endl;
     }
     else{
-        cout << "error" << endl;
+        cerr << "Error while reading .stl file: file does not exist" << endl;
+        exit(1);
     }
 
     //now read in all the triangles
@@ -158,14 +155,9 @@ void read_stl(string fname, vector <hitable*>&v, vec3 &min, vec3 &max){
             if(p3.z < min.z)min.z = p3.z;
             if(p3.z > max.z)max.z = p3.z;
 
-            if(prn){
-            	prn = 0;
-            	cout << p1.x << "," << p1.y << "," << p1.z << endl;
-            }
-
             //cout << "p1: " << p1.x << "," << p1.y << "," << p1.z << endl;
             //add a new triangle to the array
-            v.push_back(new triangle(p1,p2,p3,new metal(vec3(0.1,0.8,0.1),0.1f)));
+            v.push_back(new triangle(p1,p2,p3,new metal(vec3(0.8,0.1,0.1),0.1f)));
 
             //add sphere
             //vec3 avg = (p1+p2+p3)/3.0f;
@@ -268,9 +260,10 @@ vec3 blend(ray &r, int bounces, BVH &world)
 
 void usage(char *argv[])
 {
-	cerr << "Usage: " << argv[0] << " filename.stl r x y z" << endl
+	cerr << "Usage: " << argv[0] << " filename.stl r x y z x2 y2 z2" << endl
 		 << "    where r is rays per pixel" << endl
-		 << "          x y z are coordinates of camera" << endl;
+		 << "    x y z are coordinates of camera" << endl
+		 << "    x2 y2 z2 are coordinates to look at" << endl;
 }
 
 int safe_int(const char * const varName, char *arg, char *argv[]) {
@@ -287,7 +280,7 @@ int safe_int(const char * const varName, char *arg, char *argv[]) {
 
 int main(int argc, char *argv[])
 {
-	if (argc != 6)
+	if (argc != 9)
 	{
 		usage(argv);
 		exit(1);
@@ -299,15 +292,17 @@ int main(int argc, char *argv[])
 	srand(time(NULL));
 	srand48(time(0));
 
-	string filename = string(argv[1]);
+	string filename = string("../STL_files/") + string(argv[1]);
 	int rays_per_pixel = safe_int("r", argv[2], argv);
 	int x = safe_int("x", argv[3], argv);
 	int y = safe_int("y", argv[4], argv);
 	int z = safe_int("z", argv[5], argv);
 
-	vec3 origin = vec3(x,y,z);
+	int x2 = safe_int("x2", argv[6], argv);
+	int y2 = safe_int("y2", argv[7], argv);
+	int z2 = safe_int("z2", argv[8], argv);
 	
-	const int scale = 5;
+	const int scale = 3;
 
 	const int width = 192*scale;
 	const int height = 108*scale;
@@ -324,17 +319,18 @@ int main(int argc, char *argv[])
 	vec3 minb = vec3(1.0e+10,1.0e+10,1.0e+10);
 	vec3 maxb = vec3(-1.0e+10,-1.0e+10,-1.0e+10);
 	read_stl(filename,worl,minb,maxb);
-	cout << "Read stl" << endl;
+	cout << filename.substr(13,filename.size()) << " read" << endl;
 	//worl.push_back(new triangle(vec3(20,20,0),vec3(-20,20,0),vec3(0,40,0),new diffuse(vec3(0.9,0.3,0.3))));
 	worl.push_back(new sphere(vec3(0, -1000, 0), 990, new diffuse(vec3(0.5, 0.5, 0.5))));
-    cout << worl.size()<< endl;
+    cout << worl.size()<< " triangles detected in " << filename.substr(13,filename.size()) << endl;
 
 	//BVH world = BVH(wor, wor.size(), vec3(-11, -3, -11), vec3(11, 11, 11));
 	BVH world = BVH(worl, worl.size(), minb, maxb);
-	std::cout << "Tree made" << std::endl;
+	std::cout << "Bounding Volume Hierarchy Tree made" << std::endl;
 	//hitable_list world = hitable_list(wor);
 
-	vec3 lookat = vec3(0,5,0);
+	vec3 origin = vec3(x,y,z);
+	vec3 lookat = vec3(x2,y2,z2);
 	//vec3 pixels[width*height];
 	camera cam = camera(origin, lookat, 65, float(width) / float(height));
 	float u, v;
@@ -343,9 +339,10 @@ int main(int argc, char *argv[])
 	//hitable_list smol;
 
 	std::ofstream file;
-	file.open("hell.ppm");
+	file.open("../images/output.ppm");
 	file << "P3\n" << width << " " << height << "\n255\n";
 
+	cout << "Starting to raytrace image of size "<< height << " by " << width << "..." << endl;
 
 
 	for (int i = height - 1; i >= 0; i--)
