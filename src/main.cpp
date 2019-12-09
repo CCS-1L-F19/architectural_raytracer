@@ -73,7 +73,9 @@ void consv3(vec3& v,char* facet) {
 
 }
 
-void read_stl(string fname, vector <hitable*>&v){
+bool prn = 1;
+
+void read_stl(string fname, vector <hitable*>&v, vec3 &min, vec3 &max){
 
     //!!
     //don't forget ios::binary
@@ -105,7 +107,9 @@ void read_stl(string fname, vector <hitable*>&v){
     }
 
     //now read in all the triangles
-    for(int i = 0; i < 90000; i++){
+    for(int i = 0; i < 350000; i++){
+
+    	float scalestl = 1.0f;
 
         char facet[50];
 
@@ -121,21 +125,43 @@ void read_stl(string fname, vector <hitable*>&v){
             vec3 p1,p2,p3,normal;
             consv3(normal,facet);
             tmp = normal.y;
-            normal.y = normal.z;
-            normal.z = -1.0f * tmp;
+            normal.y = scalestl*normal.z;
+            normal.z = scalestl*-1.0f * tmp;
             consv3(p1,facet+12);
+            if(p1.x < min.x)min.x = p1.x;
+            if(p1.x > max.x)max.x = p1.x;
             tmp = p1.y;
-            p1.y = p1.z;
-            p1.z = -1.0f * tmp;
+            p1.y = scalestl*p1.z;
+            if(p1.y < min.y)min.y = p1.y;
+            if(p1.y > max.y)max.y = p1.y;
+            p1.z = scalestl*-1.0f * tmp;
+            if(p1.z < min.z)min.z = p1.z;
+            if(p1.z > max.z)max.z = p1.z;
             consv3(p2,facet+24);
+            if(p2.x < min.x)min.x = p2.x;
+            if(p2.x > max.x)max.x = p2.x;
             tmp = p2.y;
-            p2.y = p2.z;
-            p2.z = -1.0f * tmp;
+            p2.y = scalestl*p2.z;
+            if(p2.y < min.y)min.y = p2.y;
+            if(p2.y > max.y)max.y = p2.y;
+            p2.z = scalestl*-1.0f * tmp;
+            if(p2.z < min.z)min.z = p2.z;
+            if(p2.z > max.z)max.z = p2.z;
             consv3(p3,facet+36);
+            if(p3.x < min.x)min.x = p3.x;
+            if(p3.x > max.x)max.x = p3.x;
             tmp = p3.y;
-            p3.y = p3.z;
-            p3.z = -1.0f * tmp;
+            p3.y = scalestl*p3.z;
+            if(p3.y < min.y)min.y = p3.y;
+            if(p3.y > max.y)max.y = p3.y;
+            p3.z = scalestl*-1.0f * tmp;
+            if(p3.z < min.z)min.z = p3.z;
+            if(p3.z > max.z)max.z = p3.z;
 
+            if(prn){
+            	prn = 0;
+            	cout << p1.x << "," << p1.y << "," << p1.z << endl;
+            }
 
             //cout << "p1: " << p1.x << "," << p1.y << "," << p1.z << endl;
             //add a new triangle to the array
@@ -242,7 +268,7 @@ vec3 blend(ray &r, int bounces, BVH &world)
 
 void usage(char *argv[])
 {
-	cerr << "Usage: " << argv[0] << " r x y z" << endl
+	cerr << "Usage: " << argv[0] << " filename.stl r x y z" << endl
 		 << "    where r is rays per pixel" << endl
 		 << "          x y z are coordinates of camera" << endl;
 }
@@ -261,7 +287,7 @@ int safe_int(const char * const varName, char *arg, char *argv[]) {
 
 int main(int argc, char *argv[])
 {
-	if (argc != 5)
+	if (argc != 6)
 	{
 		usage(argv);
 		exit(1);
@@ -273,10 +299,11 @@ int main(int argc, char *argv[])
 	srand(time(NULL));
 	srand48(time(0));
 
-	int rays_per_pixel = safe_int("r", argv[1], argv);
-	int x = safe_int("x", argv[2], argv);
-	int y = safe_int("y", argv[3], argv);
-	int z = safe_int("z", argv[4], argv);
+	string filename = string(argv[1]);
+	int rays_per_pixel = safe_int("r", argv[2], argv);
+	int x = safe_int("x", argv[3], argv);
+	int y = safe_int("y", argv[4], argv);
+	int z = safe_int("z", argv[5], argv);
 
 	vec3 origin = vec3(x,y,z);
 	
@@ -294,18 +321,20 @@ int main(int argc, char *argv[])
 	//std::vector<hitable *> wor = random_scene();
 
 	vector<hitable*> worl;
-	read_stl("bunny.stl",worl);
+	vec3 minb = vec3(1.0e+10,1.0e+10,1.0e+10);
+	vec3 maxb = vec3(-1.0e+10,-1.0e+10,-1.0e+10);
+	read_stl(filename,worl,minb,maxb);
 	cout << "Read stl" << endl;
 	//worl.push_back(new triangle(vec3(20,20,0),vec3(-20,20,0),vec3(0,40,0),new diffuse(vec3(0.9,0.3,0.3))));
 	worl.push_back(new sphere(vec3(0, -1000, 0), 990, new diffuse(vec3(0.5, 0.5, 0.5))));
     cout << worl.size()<< endl;
 
 	//BVH world = BVH(wor, wor.size(), vec3(-11, -3, -11), vec3(11, 11, 11));
-	BVH world = BVH(worl, worl.size(), vec3(-60, -3, -60), vec3(60, 150, 60));
+	BVH world = BVH(worl, worl.size(), minb, maxb);
 	std::cout << "Tree made" << std::endl;
 	//hitable_list world = hitable_list(wor);
 
-	vec3 lookat = vec3(0,8,0);
+	vec3 lookat = vec3(0,5,0);
 	//vec3 pixels[width*height];
 	camera cam = camera(origin, lookat, 65, float(width) / float(height));
 	float u, v;
