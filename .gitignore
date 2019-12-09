@@ -9,6 +9,8 @@ main
 *.ppm
 *.png
 !output.ppm
+!dragon.png
+!teapot.png
 
 # Prerequisites
 *.d
